@@ -12,7 +12,7 @@ public class ClassEvent implements TelemetryEvent, ClassListener {
     private int numStateChanges;
 
     //I'm not sure if i want this to be static, but I want to keep track of the number of changes made to each class
-    private static Map<String, Integer> classes = new TreeMap<>(); 
+    private Map<String, Integer> classes = new TreeMap<>(); 
 
 
     private ArrayList<ClassEvent> deletedClasses;
