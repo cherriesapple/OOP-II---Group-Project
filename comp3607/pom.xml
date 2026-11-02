@@ -13,12 +13,21 @@
   <url>http://www.example.com</url>
 
   <properties>
+    <bluej.path>C:\Program Files\BlueJ-windows-6.0.1\bluej\lib\bluej.jar</bluej.path>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>25</maven.compiler.source>
-    <maven.compiler.target>25</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>bluej</groupId>
+      <artifactId>bluej</artifactId>
+      <version>5.0</version>
+      <scope>system</scope>
+      <systemPath>${bluej.path}</systemPath>
+    </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
@@ -49,10 +58,6 @@
           <version>2.22.1</version>
         </plugin>
         <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
         </plugin>
@@ -68,6 +73,16 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+                <archive>
+                    <manifestFile>${project.basedir}/manifest.txt</manifestFile>
+                </archive>
+            </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
