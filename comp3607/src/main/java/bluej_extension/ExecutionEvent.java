@@ -1,21 +1,20 @@
 package bluej_extension;
+import java.sql.Timestamp;
 
-public class ExecutionEvent implements InvokationListener {
 
-    private long timestamp = System.currentTimeMillis();
+public class ExecutionEvent{
+
+    private Timestamp timestamp;
     private String outputSummary;
     private int numExecutions;
 
-    public ExecutionEvent(long timestamp, String outputSummary){
-        this.timestamp = timestamp;
+    public ExecutionEvent(String outputSummary){
+        this.timestamp = new Timestamp(System.currentTimeMillis());
         this.outputSummary = outputSummary;
-
+        //this.numExecutions = 1;
     }
     public String getType(){return "PROGRAM_EXEUTED";}
-    public long getTimestamp(){return this.timestamp;}
+    public Timestamp getTimestamp(){return this.timestamp;}
 
-    public void invocationFinished (ExecutionEvent event){
-        numExecutions++;
-    }
 
 }

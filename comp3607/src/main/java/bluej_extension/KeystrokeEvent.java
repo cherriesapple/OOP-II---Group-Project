@@ -1,14 +1,15 @@
 package bluej_extension;
+import java.sql.Timestamp;
 
 import java.awt.*;
 import java.awt.event.*;
 
-public class KeystrokeEvent implements TelemetryEvent, KeyListener {
+public class KeystrokeEvent implements TelemetryEvent{
     private int numCharacters;
-    private long timestamp;
+    private Timestamp timestamp;
 
-    public KeystrokeEvent (long timestamp){
-        this.timestamp = timestamp;
+    public KeystrokeEvent (){
+        this.timestamp = new Timestamp(System.currentTimeMillis());
     }
     
     @Override
@@ -16,20 +17,7 @@ public class KeystrokeEvent implements TelemetryEvent, KeyListener {
         return "KEYSTROKE";
     }
 
-    public long getTimeStamp(){
+    public Timestamp getTimeStamp(){
         return this.timestamp;
-    }
-
-    //Needed for interface
-    public void keyPressed(KeystrokeEvent event){
-
-    }
-
-    public void keyReleased (KeystrokeEvent event){
-
-    }
-
-    public void keyTyped (KeystrokeEvent event){
-
     }
 }

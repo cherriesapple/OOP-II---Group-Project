@@ -1,7 +1,9 @@
 package bluej_extension;
+import java.sql.Timestamp;
 
 public interface TelemetryEvent {
+    
     String getEventType();
-    long getTimeStamp();
+    Timestamp getTimeStamp();
 
 }

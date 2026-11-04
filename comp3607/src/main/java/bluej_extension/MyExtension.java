@@ -1,5 +1,4 @@
 
-
 package bluej_extension;
 
 import bluej.extensions2.*;
@@ -12,14 +11,18 @@ import java.util.ArrayList;
  */
 public class MyExtension extends Extension implements ClassListener, CompileListener
 {
-    private ArrayList<TelemetryEvent> events;
+   // private ArrayList<TelemetryEvent> events;
 
     public void startup(BlueJ bluej)
     {
-        this.events = new ArrayList<TelemetryEvent>();
+        //this.events = new ArrayList<TelemetryEvent>();
         
         bluej.addCompileListener(this);
         bluej.addClassListener(this);
+        bluej.addKeyListener(this);
+        bluej.addInvocationListener(this);
+        bluej.addPackageListener(this);
+
     }
 
     public 

@@ -1,25 +1,19 @@
 package bluej_extension;
+import java.sql.Timestamp;
 
-public class ProjectEvent implements TelemetryEvent, PackageListener {
+public class ProjectEvent implements TelemetryEvent{
     private String eventType;
     private String projectName;
-    private long timestamp;
+    private Timestamp timestamp;
 
-    public ProjectEvent(String eventType, String projectName, long timeStamp){
+    public ProjectEvent(String eventType, String projectName){
         this.eventType = eventType;
         this.projectName = projectName;
-        this.timestamp = timestamp;
+        this.timestamp = new Timestamp(System.currentTimeMillis());
     }
 
     public String getEventType() {return this.eventType;}
     public String getProjectName() {return this.projectName;}
-    public long getTimeStamp() {return this.timestamp;}
-
-    public void packageClosing(ProjectEvent event){
-
-    }
-
-    public void packageOpened(ProjectEvent event){
-
-    }
+    public Timestamp getTimeStamp() {return this.timestamp;}
+   
 }
