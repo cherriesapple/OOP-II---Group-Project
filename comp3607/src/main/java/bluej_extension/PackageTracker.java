@@ -8,6 +8,8 @@ public class PackageTracker implements PackageListener {
 
     @Override 
     public void packageClosing(PackageEvent event){
+
+        
         try {
             System.out.println("/Opened Package: " + event.getPackage().getProject().getName());
         } catch (ExtensionException e){

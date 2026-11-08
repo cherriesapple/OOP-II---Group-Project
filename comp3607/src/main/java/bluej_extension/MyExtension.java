@@ -2,32 +2,31 @@
 
 package bluej_extension;
 
-import bluej.extensions2.*;
-import bluej.extensions2.event.*;
-import java.net.URL;
-import java.util.ArrayList;
+import bluej.extensions2.BlueJ;
+import bluej.extensions2.Extension;
 
 /*
  * This is the starting point of a BlueJ Extension
  */
-public class MyExtension extends Extension implements ClassListener, CompileListener
+public class MyExtension extends Extension
 {
-    private ArrayList<TelemetryEvent> events;
+    private final PackageTracker packageTracker = new PackageTracker();
+    private final ClassTracker classTracker = new ClassTracker();
+    private final InvocationTracker invocationTracker = new InvocationTracker();
 
+    @Override 
     public void startup(BlueJ bluej)
     {
-        this.events = new ArrayList<TelemetryEvent>();
-        
-        bluej.addCompileListener(this);
-        bluej.addClassListener(this);
+        bluej.addClassListener(classTracker);
+        bluej.addPackageListener(packageTracker);
+        bluej.addInvocationFinishedListener(invocationTracker);
     }
 
-    public 
     /*
      * A package has been opened. Print the name of the project it is part of.
      * System.out is redirected to the BlueJ debug log file.
      * The location of this file is given in the Help/About BlueJ dialog box.
-     */
+    
     public void packageOpened(PackageEvent ev)
     {
         try
@@ -40,18 +39,20 @@ public class MyExtension extends Extension implements ClassListener, CompileList
             System.out.println("Project closed by BlueJ");
         }
     } 
-               
+          
+    /*
     /*
      * A package is closing.
-     */
+    
     public void packageClosing(PackageEvent ev)
     {
     } 
                
-    /*
      * This method must decide if this Extension is compatible with the                
      * current release of the BlueJ Extensions API
      */
+
+    @Override 
     public boolean isCompatible()
     { 
         return (getExtensionsAPIVersionMajor() >= 3); 
@@ -60,6 +61,8 @@ public class MyExtension extends Extension implements ClassListener, CompileList
     /*
      * Returns the version number of this extension
      */
+
+    @Override 
     public String getVersion ()
     { 
         return ("1.2.3"); 
@@ -68,19 +71,23 @@ public class MyExtension extends Extension implements ClassListener, CompileList
     /*
      * Returns the user-visible name of this extension
      */
+
+    @Override 
     public String getName ()
     { 
-        return ("Simple Extension"); 
+        return ("Telemetry Extension"); 
     }
 
+    @Override 
     public void terminate()
     {
-        System.out.println ("Simple extension terminates");
+        System.out.println ("End of Telemetry Extension");
     }
-               
+        
+    @Override 
     public String getDescription ()
     {
-        return ("A simple extension");
+        return ("Collects telemetry data and generates a summary report each time the application is used");
     }
 
     /*
@@ -88,19 +95,7 @@ public class MyExtension extends Extension implements ClassListener, CompileList
      * The real problem is making sure that the link will still be alive 
      * in three years...
      */
-    public URL getURL ()
-    {
-        try
-        {
-            return new URL("http://www.bluej.org/doc/writingextensions.html");
-        }
-        catch ( Exception e )
-        {
-            // The link is either dead or otherwise unreachable
-            System.out.println ("Simple extension: getURL: Exception="+e.getMessage());
-            return null;
-        }
-    }
 
+   
 
 }
