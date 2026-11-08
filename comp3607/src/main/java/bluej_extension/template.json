@@ -1,0 +1,50 @@
+{
+
+    "schema version": "1.0",
+    "status" : "IN PROGRESS",
+
+    "user_id": null,
+    "session_length_minutes": 0.0,
+    "active": "yes",
+    "idle_minutes": 0.0,
+    "total_compilations": 0,
+    "total_errors": 0,
+
+    "session_data": {
+        
+        "session_id": null,
+        "project_name": null,
+        "start_time": null,
+        "end_time": null,
+        "idle_threshold_seconds": 180,
+        "successful_compilations": 0,
+        "failed_compilations": 0,
+        "total_runs": 0,
+        "total_exceptions": 0
+
+    },
+
+    
+    "class_lifecycle": [],
+
+
+    "events": [],
+
+    "derived": {
+
+        "compile_intervals_ms": [],
+        "mean_compile_interval_ms": 0,
+        "compile_success_rate": 0.0,
+        "error_breakdown": [],
+        "error_category_totals": {},
+        "class_timeline": [],
+        "activity_timeline": {
+        "bucket_minutes": 3,
+        "total_edit_signals": 0,
+        "buckets": []
+
+        }
+
+    }
+
+}
