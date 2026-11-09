@@ -12,10 +12,12 @@ public class MyExtension extends Extension
     private final PackageTracker packageTracker = new PackageTracker();
     private final ClassTracker classTracker = new ClassTracker();
     private final InvocationTracker invocationTracker = new InvocationTracker();
+    private final CompileTracker compileTracker = new CompileTracker();
 
     @Override 
     public void startup(BlueJ bluej)
     {
+        bluej.addCompileListener(compileTracker);
         bluej.addClassListener(classTracker);
         bluej.addPackageListener(packageTracker);
         bluej.addInvocationFinishedListener(invocationTracker);
