@@ -13,9 +13,8 @@
   <url>http://www.example.com</url>
 
   <properties>
-    <bluej.path>/Applications/BlueJ.app/Contents/Java/bluej.jar</bluej.path>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>25</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
 
 
@@ -39,7 +38,7 @@
       <artifactId>bluej</artifactId>
       <version>5.0</version>
       <scope>system</scope>
-      <systemPath>${bluej.path}</systemPath>
+      <systemPath>${project.basedir}/lib/bluej.jar</systemPath>
     </dependency>
 
     <dependency>
