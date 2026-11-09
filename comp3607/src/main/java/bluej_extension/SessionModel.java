@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @JsonPropertyOrder({
     "schema version", "status", "user_id", "session_length_minutes",
@@ -175,7 +177,7 @@ public class SessionModel {
 
         @JsonProperty("active_seconds")   
         public long activeSeconds;
-        
+
     }
 
 }
