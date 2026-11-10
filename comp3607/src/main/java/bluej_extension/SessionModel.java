@@ -3,6 +3,7 @@ package bluej_extension;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.time.Instant;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.LinkedHashMap;
@@ -102,7 +103,7 @@ public class SessionModel {
         public String type;// "COMPILE", "RUN", "EDIT_BURST"
 
         @JsonProperty("timestamp") 
-        public String timestamp;
+        public Timestamp timestamp;
 
         @JsonProperty("data")      
         public Map<String, Object> data = new LinkedHashMap<>();
@@ -179,5 +180,4 @@ public class SessionModel {
         public long activeSeconds;
 
     }
-
 }
