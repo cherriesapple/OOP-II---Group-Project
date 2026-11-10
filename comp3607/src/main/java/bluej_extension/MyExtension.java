@@ -8,10 +8,12 @@ import bluej.extensions2.Extension;
  */
 public class MyExtension extends Extension
 {
-    private final PackageTracker packageTracker = new PackageTracker();
-    private final ClassTracker classTracker = new ClassTracker();
-    private final InvocationTracker invocationTracker = new InvocationTracker();
+    private SessionModel session = new SessionModel();
+    private final PackageTracker packageTracker = new PackageTracker(session);
+    private final ClassTracker classTracker = new ClassTracker(session);
+    private final InvocationTracker invocationTracker = new InvocationTracker(session);
     private final CompileTracker compileTracker = new CompileTracker();
+    
 
     @Override 
     public void startup(BlueJ bluej)
@@ -20,6 +22,8 @@ public class MyExtension extends Extension
         bluej.addClassListener(classTracker);
         bluej.addPackageListener(packageTracker);
         bluej.addInvocationFinishedListener(invocationTracker);
+
+
     }
 
     /*

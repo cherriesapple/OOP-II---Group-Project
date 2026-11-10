@@ -1,13 +1,13 @@
 package bluej_extension;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import java.time.Instant;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({
     "schema version", "status", "user_id", "session_length_minutes",
@@ -93,7 +93,7 @@ public class SessionModel {
         public String event;// "CREATED" / "MODIFIED" / "REMOVED"
 
         @JsonProperty("timestamp")  
-        public String timestamp;
+        public Timestamp timestamp;
 
     }
 
@@ -134,12 +134,11 @@ public class SessionModel {
         public ActivityTimeline activityTimeline = new ActivityTimeline();
 
     }
-     
 
      public static class ErrorEntry {
 
         @JsonProperty("timestamp")   
-        public String timestamp;
+        public Timestamp timestamp;
 
         @JsonProperty("category")     
         public String category;

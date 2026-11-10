@@ -10,7 +10,12 @@ import bluej_extension.SessionModel.ClassLifecycleEvent;
 public class ClassTracker implements ClassListener {
 
     private int numDeletedClasses = 0;   
-    private ClassLifecycleEvent myEvent;   
+    private ClassLifecycleEvent myEvent;
+    private final SessionModel session;
+    
+    public ClassTracker (SessionModel session){
+        this.session = session;
+    }
 
     private ClassLifecycleEvent createClassLifecycleEvent(String name, String event, Timestamp time){
         
@@ -27,7 +32,7 @@ public class ClassTracker implements ClassListener {
 
         String eventDescription = "NAME_CHANGED [New Name: " + event.getBClass().getName() + "]";
         ClassLifecycleEvent classEvent = createClassLifecycleEvent(event.getOldName(), eventDescription, time);
-        SessionModel.classLifeCycle.add(classEvent);  
+        session.classLifecycle.add(classEvent);  
 
         System.out.println( event.getOldName()+ " changed to " + event.getBClass().getName());
 
@@ -38,7 +43,7 @@ public class ClassTracker implements ClassListener {
         Timestamp time = new Timestamp(System.currentTimeMillis());
 
         ClassLifecycleEvent classEvent = createClassLifecycleEvent(event.getBClass().getName(), "REMOVED", time);
-        SessionModel.classLifeCycle.add(classEvent);  
+        session.classLifecycle.add(classEvent);  
 
         this.numDeletedClasses++;
 
@@ -49,6 +54,7 @@ public class ClassTracker implements ClassListener {
     public void classStateChanged(ClassEvent event){
         Timestamp time = new Timestamp(System.currentTimeMillis());
         String eventDescription = "MODIFIED";
+        String className = event.getBClass().getName();
 
         if (event.isClassCompiled()){
              System.out.println( "An attempt to compile " + className + " was made");
@@ -66,7 +72,7 @@ public class ClassTracker implements ClassListener {
             
 
         ClassLifecycleEvent classEvent = createClassLifecycleEvent(event.getBClass().getName(), eventDescription, time);
-        SessionModel.classLifeCycle.add(classEvent); 
+        session.classLifecycle.add(classEvent); 
 
     }
 }

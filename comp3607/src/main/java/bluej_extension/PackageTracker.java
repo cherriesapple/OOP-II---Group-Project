@@ -10,6 +10,11 @@ public class PackageTracker implements PackageListener {
 
     private TelemetryEvent myEvent;
     String eventDescription;
+    private final SessionModel session;
+
+    public PackageTracker(SessionModel session){
+        this.session = session;
+    }
     
     private TelemetryEvent createTelemetryEvent(){
         myEvent.timestamp = new Timestamp(System.currentTimeMillis());
@@ -44,7 +49,7 @@ public class PackageTracker implements PackageListener {
             eventDescription = "Created/Opened Package: " + event.getPackage().getProject().getName();
             System.out.println("Created/Opened Package: " + event.getPackage().getProject().getName());
         } catch (ExtensionException e){
-            eventDescription = "Created/Opened Package: " + event.getPackage().getProject().getName();
+            eventDescription = "Error getting package name: " + e.getMessage();
             System.out.println("Error getting package name: " + e.getMessage());
         }   
 

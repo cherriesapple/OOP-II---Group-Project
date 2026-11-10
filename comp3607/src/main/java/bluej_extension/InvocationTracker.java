@@ -9,10 +9,9 @@ public class InvocationTracker implements InvocationFinishedListener{
 
     private int numExecutions = 0;
     private TelemetryEvent myEvent;
-    private SessionModel session;
+    private final SessionModel session;
 
     public InvocationTracker(SessionModel session){
-        super();
         this.session = session;
     }
 
