@@ -18,7 +18,7 @@ public class ActivityTracker {
     private TextLocation lastCaretLoc = null;
 
     private final List<Long> activity = new ArrayList<>();
-    private static final long IDLE_THRESH_NS = 120_000_000_000L;
+    private static final long IDLE_THRESH_NS = 180_000_000_000L;
 
     public ActivityTracker() {
         this.editor = null;
