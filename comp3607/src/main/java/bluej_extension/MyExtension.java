@@ -1,4 +1,3 @@
-
 package bluej_extension;
 
 import bluej.extensions2.BlueJ;
