@@ -1,4 +1,3 @@
-
 package bluej_extension;
 
 import bluej.extensions2.BClass;
@@ -15,19 +14,23 @@ import bluej.extensions2.event.ExtensionEvent;
  */
 public class MyExtension extends Extension
 {
-    private final PackageTracker packageTracker = new PackageTracker();
-    private final ClassTracker classTracker = new ClassTracker();
-    private final InvocationTracker invocationTracker = new InvocationTracker();
+
+=======
+    private SessionModel session = new SessionModel();
+    private final PackageTracker packageTracker = new PackageTracker(session);
+    private final ClassTracker classTracker = new ClassTracker(session);
+    private final InvocationTracker invocationTracker = new InvocationTracker(session);
     private final CompileTracker compileTracker = new CompileTracker();
-    private final ActivityTracker activityTracker= new ActivityTracker();
+    
+>>>>>>> 8c34a7830e0ecb0a1fd1965a17eabd84920470f7
 
     @Override 
     public void startup(BlueJ bluej)
     {
+        bluej.addCompileListener(compileTracker);
         bluej.addClassListener(classTracker);
         bluej.addPackageListener(packageTracker);
         bluej.addInvocationFinishedListener(invocationTracker);
-        bluej.addCompileListener(compileTracker);
         bluej.addExtensionEventListener((ExtensionEvent event) -> {
 
             if(event instanceof ClassEvent classEvent){
@@ -44,6 +47,8 @@ public class MyExtension extends Extension
                 
             }
         });
+
+
     }
 
     /*
