@@ -1,8 +1,14 @@
 
 package bluej_extension;
 
+import bluej.extensions2.BClass;
 import bluej.extensions2.BlueJ;
 import bluej.extensions2.Extension;
+import bluej.extensions2.PackageNotFoundException;
+import bluej.extensions2.ProjectNotOpenException;
+import bluej.extensions2.editor.JavaEditor;
+import bluej.extensions2.event.ClassEvent;
+import bluej.extensions2.event.ExtensionEvent;
 
 /*
  * This is the starting point of a BlueJ Extension
@@ -12,6 +18,8 @@ public class MyExtension extends Extension
     private final PackageTracker packageTracker = new PackageTracker();
     private final ClassTracker classTracker = new ClassTracker();
     private final InvocationTracker invocationTracker = new InvocationTracker();
+    private final CompileTracker compileTracker = new CompileTracker();
+    private final ActivityTracker activityTracker= new ActivityTracker();
 
     @Override 
     public void startup(BlueJ bluej)
@@ -19,6 +27,23 @@ public class MyExtension extends Extension
         bluej.addClassListener(classTracker);
         bluej.addPackageListener(packageTracker);
         bluej.addInvocationFinishedListener(invocationTracker);
+        bluej.addCompileListener(compileTracker);
+        bluej.addExtensionEventListener((ExtensionEvent event) -> {
+
+            if(event instanceof ClassEvent classEvent){
+                BClass bClass = classEvent.getBClass();
+                
+                try{
+                    JavaEditor editor = bClass.getJavaEditor();
+                    if(editor != null){
+                        activityTracker.beginTracker(editor);
+                    }
+                } catch (PackageNotFoundException | ProjectNotOpenException e){
+                    
+                }
+                
+            }
+        });
     }
 
     /*

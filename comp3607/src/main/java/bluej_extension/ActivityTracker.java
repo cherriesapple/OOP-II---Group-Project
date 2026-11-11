@@ -66,6 +66,12 @@ public class ActivityTracker {
         pollTimeline.play();
     }
 
+    public void stopTracker(){
+        if(pollTimeline != null){
+            pollTimeline.stop();
+        }
+    }
+
     public long calculateTimeIdle(){
         long timeIdle = 0;
         long idle;
@@ -83,6 +89,10 @@ public class ActivityTracker {
 
     public long calculateTimeActive(){
         long timeActive;
+
+        if(activity.size() < 2){
+            return 0;
+        }
         
         long active = (activity.get(activity.size()-1)) - activity.get(0);
         
