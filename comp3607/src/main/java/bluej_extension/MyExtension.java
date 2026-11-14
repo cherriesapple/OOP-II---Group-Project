@@ -15,14 +15,11 @@ import bluej.extensions2.event.ExtensionEvent;
 public class MyExtension extends Extension
 {
 
-=======
-    private SessionModel session = new SessionModel();
+    private final SessionModel session = new SessionModel();
     private final PackageTracker packageTracker = new PackageTracker(session);
     private final ClassTracker classTracker = new ClassTracker(session);
     private final InvocationTracker invocationTracker = new InvocationTracker(session);
     private final CompileTracker compileTracker = new CompileTracker();
-    
->>>>>>> 8c34a7830e0ecb0a1fd1965a17eabd84920470f7
 
     @Override 
     public void startup(BlueJ bluej)
