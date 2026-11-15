@@ -12,7 +12,6 @@ public class MyExtension extends Extension
     private final InvocationTracker invocationTracker = new InvocationTracker(session);
     private final CompileTracker compileTracker = new CompileTracker();
     
->>>>>>> 8c34a7830e0ecb0a1fd1965a17eabd84920470f7
 
     @Override 
     public void startup(BlueJ bluej)
@@ -20,26 +19,9 @@ public class MyExtension extends Extension
         bluej.addCompileListener(compileTracker);
         bluej.addClassListener(classTracker);
         bluej.addPackageListener(packageTracker);
-        bluej.addInvocationFinishedListener(invocationTracker);
-        
-       // bluej.addExtensionEventListener((ExtensionEvent event) -> {
-
-            //if(event instanceof ClassEvent classEvent){
-               // BClass bClass = classEvent.getBClass();
-                
-              //  try{
-               //     JavaEditor editor = bClass.getJavaEditor();
-                //    if(editor != null){
-                 //       activityTracker.beginTracker(editor);
-                  //  }
-               // } catch (PackageNotFoundException | ProjectNotOpenException e){
-                    
-              //  }
-                
-            //}
-        //});
+        bluej.addInvocationFinishedListener(invocationTracker);    
+        //bluej.addExtensionEventListener(ExtensionEvent event);
     }
-
 
     @Override 
     public boolean isCompatible()
