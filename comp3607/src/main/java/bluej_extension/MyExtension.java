@@ -1,5 +1,7 @@
 package bluej_extension;
 
+import java.time.Instant;
+
 import bluej.extensions2.BlueJ;
 import bluej.extensions2.Extension;
 
@@ -10,7 +12,8 @@ public class MyExtension extends Extension
     private final PackageTracker packageTracker = new PackageTracker(session);
     private final ClassTracker classTracker = new ClassTracker(session);
     private final InvocationTracker invocationTracker = new InvocationTracker(session);
-    private final CompileTracker compileTracker = new CompileTracker();
+    private final CompileTracker compileTracker = new CompileTracker(session);
+    private final ActivityListener activityListener = new ActivityListener(session);
     
 
     @Override 
@@ -20,7 +23,7 @@ public class MyExtension extends Extension
         bluej.addClassListener(classTracker);
         bluej.addPackageListener(packageTracker);
         bluej.addInvocationFinishedListener(invocationTracker);    
-        //bluej.addExtensionEventListener(ExtensionEvent event);
+        bluej.addExtensionEventListener(activityListener);
     }
 
     @Override 
@@ -44,6 +47,10 @@ public class MyExtension extends Extension
     @Override 
     public void terminate()
     {
+        activityListener.getActivityTracker().stopTracker();
+        compileTracker.populateSession();
+        session.status = "COMPLETE";
+        session.sessionData.endTime = Instant.now().toString();
         System.out.println ("End of Telemetry Extension");
     }
         
