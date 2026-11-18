@@ -11,6 +11,7 @@ public class MyExtension extends Extension
     private final ClassTracker classTracker = new ClassTracker(session);
     private final InvocationTracker invocationTracker = new InvocationTracker(session);
     private final CompileTracker compileTracker = new CompileTracker();
+    private ConsoleSummary summary = new ConsoleSummary();
     
 
     @Override 
@@ -21,6 +22,15 @@ public class MyExtension extends Extension
         bluej.addPackageListener(packageTracker);
         bluej.addInvocationFinishedListener(invocationTracker);    
         //bluej.addExtensionEventListener(ExtensionEvent event);
+        
+    
+summary.captureMessages();
+
+//System.out.println("Test 1");
+//System.out.println("Test 2");
+
+
+
     }
 
     @Override 
@@ -44,6 +54,7 @@ public class MyExtension extends Extension
     @Override 
     public void terminate()
     {
+        System.out.println("Console Count = " + summary.getMessageCount());
         System.out.println ("End of Telemetry Extension");
     }
         

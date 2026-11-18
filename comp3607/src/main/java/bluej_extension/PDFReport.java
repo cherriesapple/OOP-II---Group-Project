@@ -1,4 +1,4 @@
-package bluej_extension;
+/**package bluej_extension;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -40,3 +40,4 @@ public class PdfReport {
         }
     }
 }
+**/
