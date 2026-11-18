@@ -8,9 +8,15 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 public class TextElement implements ReportElement {
 
     private final String text;
+    private final float fontSize;
+  
 
-    public TextElement(String text) {
-         this.text = text; 
+
+    public TextElement(String text){
+
+        this.text = text;
+        this.fontSize = 14;
+        
     }
 
     @Override
@@ -21,4 +27,12 @@ public class TextElement implements ReportElement {
         stream.showText(text);
         stream.endText();
     }
+
+     @Override 
+     public float getHeight() { 
+        return fontSize * 1.4f; 
+    }
+
+    
+
 }
