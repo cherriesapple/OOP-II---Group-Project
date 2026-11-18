@@ -27,7 +27,7 @@ public class PageElement implements ReportElement {
     public float getHeight() {
         float height = 0;
         for (ReportElement element : elements) {
-            height += element.getHeight() + 10;;
+            height += element.getHeight() + 10;
         }
         return height;
     }
