@@ -5,6 +5,11 @@ import java.util.Map;
 
 public class ReportData {
 
+    public String projectName;
+    public String userId;
+    public String startTime;
+    public String endTime;
+
     public long totalSessionMinutes;
     public long activeMinutes;
     public long idleMinutes;
