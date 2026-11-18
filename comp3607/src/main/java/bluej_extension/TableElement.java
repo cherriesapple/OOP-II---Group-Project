@@ -1,8 +1,7 @@
 package bluej_extension;
 
-import java.util.List;
-
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
@@ -73,6 +72,11 @@ public class TableElement implements ReportElement{
         if (s == null) return "";
         int max = (int)(width / 5.5f);
         return s.length() > max ? s.substring(0, Math.max(0, max - 2)) + ".." : s;
+    }
+
+    @Override
+    public float getHeight() {
+        return 20 + (rows.size() + 1) * 20; // 20 for header, 20 for each row
     }
 
 
