@@ -75,4 +75,8 @@ public class ClassTracker implements ClassListener {
         session.classLifecycle.add(classEvent); 
 
     }
+
+    public int getNumDeletedClasses() {
+        return numDeletedClasses;
+    }
 }
