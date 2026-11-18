@@ -9,20 +9,21 @@ public class TextElement implements ReportElement {
 
     private final String text;
     private final float fontSize;
+    private final boolean bold;
   
 
 
-    public TextElement(String text){
+    public TextElement(String text, float fontsize, boolean bold) {
 
         this.text = text;
-        this.fontSize = 14;
-        
+        this.fontSize = fontsize;
+        this.bold = bold;
     }
 
     @Override
     public void render(PDPageContentStream stream, float startY) throws IOException {
         stream.beginText();
-        stream.setFont(PDType1Font.HELVETICA_BOLD, 14);
+        stream.setFont(bold ? PDType1Font.HELVETICA_BOLD : PDType1Font.HELVETICA, fontSize);
         stream.newLineAtOffset(50, startY);
         stream.showText(text);
         stream.endText();
