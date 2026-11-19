@@ -2,11 +2,18 @@ package bluej_extension;
 
 import java.time.Instant;
 
+import java.sql.Timestamp;
 import bluej.extensions2.BlueJ;
 import bluej.extensions2.Extension;
+import bluej_extension.SessionModel.TelemetryEvent;
 
 /**
+ * This is the main entry point for the Telemetry Extension plugin. 
+ * It acts as proxy between the blueJ environment and the internal tracking components. 
  * 
+ * It is responsible for instantiating and registering the respective listeners.
+ * 
+ * @author Shurona Jackson
  */
 public class MyExtension extends Extension
 {
@@ -15,60 +22,93 @@ public class MyExtension extends Extension
     private final PackageTracker packageTracker = new PackageTracker(session);
     private final ClassTracker classTracker = new ClassTracker(session);
     private final InvocationTracker invocationTracker = new InvocationTracker(session);
-    private ConsoleSummary summary = new ConsoleSummary();
+    private final ConsoleSummary summary = new ConsoleSummary();
     private final CompileTracker compileTracker = new CompileTracker(session);
     private final ActivityListener activityListener = new ActivityListener(session);
+    private final JsonExporter jsonExporter = new JsonExporter(session);
+    private BlueJ bluejProxy;
     
-
+    /**
+     * Called by BlueJ when the extenstion is initialized.
+     */
     @Override 
     public void startup(BlueJ bluej)
     {
+        this.bluejProxy = bluej;
+
         bluej.addCompileListener(compileTracker);
         bluej.addClassListener(classTracker);
         bluej.addPackageListener(packageTracker);
         bluej.addInvocationFinishedListener(invocationTracker);    
-        //bluej.addExtensionEventListener(ExtensionEvent event);
-        
-    
-summary.captureMessages();
-
-//System.out.println("Test 1");
-//System.out.println("Test 2");
-
-
-
         bluej.addExtensionEventListener(activityListener);
+        summary.captureMessages();
     }
 
+    /**Checks if this extension is compatible with the current version of the BlueJ Extensions API. */
     @Override 
     public boolean isCompatible()
     { 
         return (getExtensionsAPIVersionMajor() >= 3); 
     }
 
+    /**
+     * Retrieves the version number of this extension.
+     * 
+     * @return A string representing the version (e.g., "1.2.3")
+     */
     @Override 
     public String getVersion ()
     { 
         return ("1.2.3"); 
     }
 
+    /**
+     * Retrieves the user-visible name of this extension.
+     * 
+     * @return The name of the extension as it appears in the BlueJ "Installed Extensions" menu.
+     */
     @Override 
     public String getName ()
     { 
         return ("Telemetry Extension"); 
     }
 
+    /**
+     * Called by BlueJ when the application is closing or the extension is being unloaded.
+     * 
+     * @return The name of the extension as it appears in the BlueJ "Installed Extensions" menu.
+     */
     @Override 
     public void terminate()
     {
-        System.out.println("Console Count = " + summary.getMessageCount());
-        activityListener.getActivityTracker().stopTracker();
-        compileTracker.populateSession();
+        TelemetryEvent console = new TelemetryEvent();
+        console.timestamp = new Timestamp(System.currentTimeMillis());
+        console.type = "[CONSOLE_OUTPUT_SUMMARY]: "; 
+        console.data.put("Total_Output_Messages:",summary.getMessageCount());
+
         session.status = "COMPLETE";
         session.sessionData.endTime = Instant.now().toString();
-        System.out.println ("End of Telemetry Extension");
-    }
         
+        activityListener.getActivityTracker().stopTracker();
+        compileTracker.populateSession();
+
+        if (bluejProxy != null) {
+            bluejProxy.removeCompileListener(compileTracker);
+            bluejProxy.removeClassListener(classTracker);
+            bluejProxy.removePackageListener(packageTracker);
+            bluejProxy.removeInvocationFinishedListener(invocationTracker);
+            bluejProxy.removeExtensionEventListener(activityListener);
+        }
+
+        jsonExporter.export(session);
+
+    }
+       
+    /**
+     * Retrieves the description of what this extension does.
+     * 
+     * @return A brief description of the plugin's functionality.
+     */
     @Override 
     public String getDescription ()
     {
