@@ -5,16 +5,30 @@ import bluej.extensions2.event.InvocationFinishedEvent;
 import bluej.extensions2.event.InvocationFinishedListener;
 import bluej_extension.SessionModel.TelemetryEvent;
 
+/**
+ * This class is used by the extension to listen to all the finished invocations executed within the bluej environment
+ * 
+ * @author Shurona Jackson
+ */
 public class InvocationTracker implements InvocationFinishedListener{
 
     private int numExecutions = 0;
     private TelemetryEvent myEvent;
     private final SessionModel session;
 
+    /**
+     * Creates an invocation finished tracker.
+     * 
+     * @param session is used to store telemetry data.
+     */
     public InvocationTracker(SessionModel session){
         this.session = session;
     }
 
+    /**
+     * Adds the telemetry event to the session with its relevant data including its timestamp, type and additional information;
+     * 
+     */
     public void storeTelemetryEvent(InvocationFinishedEvent.EventType eventType, Timestamp time){
         myEvent = new TelemetryEvent();
         myEvent.timestamp = time; 
@@ -42,6 +56,10 @@ public class InvocationTracker implements InvocationFinishedListener{
 
     }
 
+    /**
+     * Method provided by bluej API that checks if an invocation was completed.
+     * 
+     */
     @Override
     public void invocationFinished(InvocationFinishedEvent event){
         Timestamp time = new Timestamp(System.currentTimeMillis());
@@ -49,5 +67,8 @@ public class InvocationTracker implements InvocationFinishedListener{
 
     }
 
+    /**
+     * @return Returns the number of executions initatied within the bluej environment. 
+     */
     public int getNumExecutions(){return this.numExecutions;}
 }

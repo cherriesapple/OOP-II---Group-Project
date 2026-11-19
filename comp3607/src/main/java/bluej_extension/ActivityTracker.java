@@ -12,6 +12,10 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 
+/**
+ * ActivityTracker tracks and compiles user activity data into the session model
+ * @author Zuri Boucaud
+ */
 public class ActivityTracker {
     private static final long POLL_MS = 500;
     static final int  BUCKET_MINS = 3;
@@ -40,6 +44,12 @@ public class ActivityTracker {
         this.session = session;
     }
 
+    /**
+     * Checks whether or not the location of the caret(mouse position) has changed since the last poll
+     * returns true if it has not moved and false if it has
+     * @param x
+     * @param y 
+     */
     public boolean isSameLoc(TextLocation x, TextLocation y){
         if(x == null || y == null){
             return x == y;
@@ -48,6 +58,12 @@ public class ActivityTracker {
         return x.getLine() == y.getLine() && x.getColumn() == y.getColumn();
     }
 
+
+    /**
+     * Build Bucket creates a bucket at index x and initializes the data fields
+     * adds the new bucket to the local list
+     * @param x
+     */
     public void buildBucket(int x){
         while(buckets.size() <= x){
             SessionModel.Bucket b = new SessionModel.Bucket();
@@ -59,6 +75,13 @@ public class ActivityTracker {
         }
     }
 
+
+    /**
+     * Edit Log recieves the time of the new activity "now", calculates active and idle gaps since
+     * last registered activity. The calculated active time is stored in the previous bucket's data and the new
+     * idle time has a bucket created to store its information
+     * @param now
+     */
     public void editLog(long now){
         long gapStart = (lastActivityNs < 0) ? startTimeNs : lastActivityNs;
         long gap = now - gapStart;
@@ -77,9 +100,7 @@ public class ActivityTracker {
                 buckets.get(gIndex).activeSeconds += TimeUnit.NANOSECONDS.toSeconds(gap);
             }
 
-        }
-
-       
+        }  
         lastActivityNs = now;
 
         int x = (int) ((now - startTimeNs)/TimeUnit.MINUTES.toNanos(BUCKET_MINS));
@@ -90,6 +111,11 @@ public class ActivityTracker {
     }
 
 
+    /**
+     * Check Activity gets data from the editor to see if any changes were made through text length
+     * and caret position. If changes were made a new edit was made and editLog() is called
+     * If an exception is thrown, the tracker is terminated
+     */
     public void checkActivty(){
         if (editor == null){
             return;
@@ -111,6 +137,12 @@ public class ActivityTracker {
         }
     }
 
+
+    /**
+     * Begin Tracker receives the active editor window and resets any potential previous pollTimelines
+     * and initiates a new timeline for this editor that checks for activity every 500ms
+     * @param active
+     */
     public void beginTracker(JavaEditor active){
         if(this.editor == active && pollTimeline != null ){
             return;
@@ -139,6 +171,10 @@ public class ActivityTracker {
     }
 
 
+    /**
+     * Terminates tracker and calculates trailing idle time that may have occured before compilation.
+     * creates a new bucket for the data and then uploads all data collected into session model
+     */
     public void stopTracker(){
         if(pollTimeline != null){
             pollTimeline.stop();
@@ -190,22 +226,41 @@ public class ActivityTracker {
         startI = null;
     }
 
+
+    /**
+     * Getter for inital start timr
+     * @return startTime ns
+     */
     public long getStartTimeNs() {
         return startTimeNs;
     }
 
+    /**Getter for the time of the ;ast recored activity
+     * @return lastActivityNS
+     */
     public long getLastActivityNs() {
         return lastActivityNs;
     }
 
+
+    /**Getter for idle itmes
+     * @return idleNs
+     */
     public long getIdleNs() {
         return idleNs;
     }
 
+    /**Getter for buckets 
+     * @return buckets
+     */
     public List<SessionModel.Bucket> getBuckets() {
         return buckets;
     }
 
+
+    /** Getter for total nuber of edits
+     * @return totalEdits
+     */
     public int getTotalEdits() {
         return totalEdits;
     }
