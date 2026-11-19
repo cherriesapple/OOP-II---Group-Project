@@ -1,5 +1,5 @@
 package bluej_extension;
-/** @author Malik Blackman */
+
 import java.io.IOException;
 import java.util.List;
 
@@ -12,6 +12,7 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
  *
  * Deliberately basic with no word wrap, no cell background, no spanning.
  * Anything fancier would be overkill for the timeline page.
+ *  @author Malik Blackman 
  */
 public class TableElement implements ReportElement{
 
@@ -40,21 +41,19 @@ public class TableElement implements ReportElement{
             total += w;
         }
 
-        float y = startY;
-
         /**Header row */
 
-        drawRow(stream, y, headers, widths, true);
-        drawLine(stream, y-23, total);
-        y -= 20;
+        drawRow(stream, startY, headers, widths, true);
+        drawLine(stream, startY-23, total);
+        startY -= 20;
 
         /** Data rows */
 
         for(String[] row : rows){
             
-            drawRow(stream, y, row, widths, false);
-            drawLine(stream, y, total);
-            y -= 20;
+            drawRow(stream, startY, row, widths, false);
+            drawLine(stream, startY, total);
+            startY -= 20;
 
         }
         
@@ -66,15 +65,15 @@ public class TableElement implements ReportElement{
      */
     private void drawRow(PDPageContentStream stream,float y, String [] cells, float[] widths, boolean header) throws IOException {
         
-        float cx= 50;
+        float currentX= 50;
 
         for(int i=0; i<cells.length && i<widths.length; i++){
             stream.beginText();
             stream.setFont(header ? PDType1Font.HELVETICA_BOLD : PDType1Font.HELVETICA, 12);
-            stream.newLineAtOffset(cx + 2, y - 15);
+            stream.newLineAtOffset(currentX + 2, y - 15);
             stream.showText(truncateText(cells[i],widths[i]));
             stream.endText();
-            cx += widths[i];
+            currentX += widths[i];
         }
     }
 
@@ -92,7 +91,7 @@ public class TableElement implements ReportElement{
      * good enough to stop columns spilling into each other without needing proper text metrics.
      */
 
-    private String truncateText(String s, float width) {
+    public String truncateText(String s, float width) {
         if (s == null) return "";
         int max = (int)(width / 5.5f);
         return s.length() > max ? s.substring(0, Math.max(0, max - 2)) + ".." : s;

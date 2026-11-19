@@ -68,6 +68,8 @@ public class InvocationTracker implements InvocationFinishedListener{
     }
 
     /**
+     * Used to generate report.
+     * 
      * @return Returns the number of executions initatied within the bluej environment. 
      */
     public int getNumExecutions(){return this.numExecutions;}

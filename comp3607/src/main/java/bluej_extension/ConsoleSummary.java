@@ -26,10 +26,10 @@ public class ConsoleSummary {
             /**
              * Writes a byte to the bluej console and increments the messageCount variable and counts the number of lines outputted to the bluej console. 
              */
-            public void write(int b){
-                originalOutput.write(b);
+            public void write(int bytes){
+                originalOutput.write(bytes);
 
-                if (b=='\n')
+                if (bytes=='\n')
                     messageCount++;
                 
             }

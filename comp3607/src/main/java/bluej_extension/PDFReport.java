@@ -1,5 +1,4 @@
 package bluej_extension;
-/** @author Malik Blackman */
 
 import java.io.File;
 import java.io.IOException;
@@ -25,14 +24,15 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
  * Each page is assembled as a PageElement (composite) tree of text, image, and table leaves. 
  * Rendering a page is then a single recursive call,
  * the page doesn't care what its children are, only that they implement ReportElement.
+ * 
+ * @author Malik Blackman
  */
-
 public class PDFReport {
 
     /** A4/Letter page height is 792pt; starting just below the top margin leaves room for a header if one is added later. */
 
     private final float pageTopY = 750;
-    private final float chartW = 500;
+    private final float chartWidth = 500;
 
     /**
      * Writes the PDF to {@code filePath}. Any missing parent directories are
@@ -47,13 +47,13 @@ public class PDFReport {
         File out = new File(filePath);
         if (out.getParentFile() != null) out.getParentFile().mkdirs();
 
-        try (PDDocument doc = new PDDocument()) {
+        try (PDDocument document = new PDDocument()) {
 
-            renderPage(doc, buildOverviewPage(data));
-            renderPage(doc, buildActivityPage(doc, session, data));
-            renderPage(doc, buildCompilationPage(doc, session, data));
-            renderPage(doc, buildTimelinePage(data));
-            doc.save(out);
+            renderPage(document, buildOverviewPage(data));
+            renderPage(document, buildActivityPage(document, session, data));
+            renderPage(document, buildCompilationPage(document, session, data));
+            renderPage(document, buildTimelinePage(data));
+            document.save(out);
 
         }
 
@@ -66,7 +66,6 @@ public class PDFReport {
      * Illegal filename characters are replaced with underscores so the
      * caller doesn't have to pre-sanitise the project name.
      */
-
     public static String suggestedFileName(String projectName) {
 
         String base = (projectName == null || projectName.isBlank())
@@ -77,14 +76,14 @@ public class PDFReport {
     }
 
     /** Page 1 - Title and Overview */
-    private PageElement buildOverviewPage(ReportData d) {
+    private PageElement buildOverviewPage(ReportData data) {
 
         PageElement page = new PageElement();
 
         page.addElement(new TextElement("BlueJ Telemetry Report", 22, true));
-        page.addElement(new TextElement("Project:    " + safe(d.projectName), 12, false));
-        page.addElement(new TextElement("Student ID: " + safe(d.userId), 12, false));
-        page.addElement(new TextElement("Session:    " + safe(d.startTime) + " to " + safe(d.endTime), 11, false));
+        page.addElement(new TextElement("Project:    " + safe(data.projectName), 12, false));
+        page.addElement(new TextElement("Student ID: " + safe(data.userId), 12, false));
+        page.addElement(new TextElement("Session:    " + safe(data.startTime) + " to " + safe(data.endTime), 11, false));
 
         page.addElement(new TextElement(" ", 10, false));
         page.addElement(new TextElement("Table of Contents", 14, true));
@@ -95,13 +94,13 @@ public class PDFReport {
 
         page.addElement(new TextElement(" ", 10, false));
         page.addElement(new TextElement("1. Session Overview", 14, true));
-        page.addElement(new TextElement("Total session duration:    " + d.totalSessionMinutes + " min", 11, false));  
-        page.addElement(new TextElement("Active coding time:        " + d.activeMinutes + " min", 11, false));
-        page.addElement(new TextElement("Idle time (>=180s gaps):   " + d.idleMinutes + " min", 11, false));
-        page.addElement(new TextElement("Total compilations:        " + d.totalCompilations, 11, false));
-        page.addElement(new TextElement("Successful / Failed:       " + d.successfulComp + " / " + d.failedComp, 11, false));
-        page.addElement(new TextElement("Total compilation errors:  " + d.totalErrors, 11, false));
-        page.addElement(new TextElement("Program runs:              " + d.totalRuns, 11, false));
+        page.addElement(new TextElement("Total session duration:    " + data.totalSessionMinutes + " min", 11, false));  
+        page.addElement(new TextElement("Active coding time:        " + data.activeMinutes + " min", 11, false));
+        page.addElement(new TextElement("Idle time (>=180s gaps):   " + data.idleMinutes + " min", 11, false));
+        page.addElement(new TextElement("Total compilations:        " + data.totalCompilations, 11, false));
+        page.addElement(new TextElement("Successful / Failed:       " + data.successfulComp + " / " + data.failedCompilations, 11, false));
+        page.addElement(new TextElement("Total compilation errors:  " + data.totalErrors, 11, false));
+        page.addElement(new TextElement("Program runs:              " + data.totalRuns, 11, false));
 
         return page;
 
@@ -109,19 +108,18 @@ public class PDFReport {
 
 
     /**  Page 2 - Activity area chart + summary */
-
-     private PageElement buildActivityPage(PDDocument doc, SessionModel s, ReportData d) throws IOException {
+     private PageElement buildActivityPage(PDDocument document, SessionModel session, ReportData data) throws IOException {
 
         PageElement page = new PageElement();
         page.addElement(new TextElement("2. User Activity Over Session", 16, true));
         page.addElement(new TextElement("Edit signals recorded in 3-minute time buckets.", 11, false));
 
-        PDImageXObject img = PDImageXObject.createFromByteArray(doc, ChartElement.generateActivityChart(s), "activityChart");
-        page.addElement(new ImageElement(img, chartW, 220));
+        PDImageXObject img = PDImageXObject.createFromByteArray(document, ChartGenerator.generateActivityChart(session), "activityChart");
+        page.addElement(new ImageElement(img, chartWidth, 220));
 
         page.addElement(new TextElement("Summary", 13, true));
-        page.addElement(new TextElement("Active time: " + d.activeMinutes + " min out of " + d.totalSessionMinutes + " min total.",11, false));
-        page.addElement(new TextElement("Idle time accumulated in gaps of 180s or more: " + d.idleMinutes + " min.",11, false));
+        page.addElement(new TextElement("Active time: " + data.activeMinutes + " min out of " + data.totalSessionMinutes + " min total.",11, false));
+        page.addElement(new TextElement("Idle time accumulated in gaps of 180s or more: " + data.idleMinutes + " min.",11, false));
         page.addElement(new TextElement("Peaks indicate focused coding bursts; flat sections indicate idle periods.",11, false));
 
         return page;
@@ -130,25 +128,24 @@ public class PDFReport {
 
 
     /** Page 3 - Compilation outcomes and error frequency */
-
-    private PageElement buildCompilationPage(PDDocument doc, SessionModel s, ReportData d) throws IOException {
+    private PageElement buildCompilationPage(PDDocument document, SessionModel session, ReportData data) throws IOException {
 
         PageElement page = new PageElement();
         page.addElement(new TextElement("3. Compilation Outcomes & Error Frequency", 16, true));
 
-        PDImageXObject outcomeImg = PDImageXObject.createFromByteArray(doc, ChartElement.generateCompileOutcomeChart(s), "compileOutcomeChart");
-        page.addElement(new ImageElement(outcomeImg, chartW, 190));
+        PDImageXObject outcomeImg = PDImageXObject.createFromByteArray(document, ChartGenerator.generateCompileOutcomeChart(session), "compileOutcomeChart");
+        page.addElement(new ImageElement(outcomeImg, chartWidth, 190));
 
-        int total = Math.max(1, d.totalCompilations);
-        double rate = 100.0 * d.successfulComp / total;
-        page.addElement(new TextElement(String.format("Success rate: %.1f%% (%d of %d attempts).",rate, d.successfulComp, d.totalCompilations), 11, false));
+        int total = Math.max(1, data.totalCompilations);
+        double rate = 100.0 * data.successfulComp / total;
+        page.addElement(new TextElement(String.format("Success rate: %.1f%% (%d of %d attempts).",rate, data.successfulComp, data.totalCompilations), 11, false));
 
-        PDImageXObject errImg = PDImageXObject.createFromByteArray(doc, ChartElement.generateErrorFrequencyChart(s), "errorFrequencyChart");
+        PDImageXObject errorImage = PDImageXObject.createFromByteArray(document, ChartGenerator.generateErrorFrequencyChart(session), "errorFrequencyChart");
 
-        page.addElement(new ImageElement(errImg, chartW, 190));
+        page.addElement(new ImageElement(errorImage, chartWidth, 190));
 
         page.addElement(new TextElement("Summary", 13, true));
-        page.addElement(new TextElement("Failed compilations: " + d.failedComp + ". Total errors reported: " + d.totalErrors + ".",11, false));
+        page.addElement(new TextElement("Failed compilations: " + data.failedCompilations + ". Total errors reported: " + data.totalErrors + ".",11, false));
         page.addElement(new TextElement("Dominant error categories reveal which concepts students struggle with most.",11, false));
 
         return page;
@@ -157,7 +154,7 @@ public class PDFReport {
 
     /** Page 4 - Project Timeline + summary */
 
-    private PageElement buildTimelinePage(ReportData d) {
+    private PageElement buildTimelinePage(ReportData data) {
 
         PageElement page = new PageElement();
         page.addElement(new TextElement("4. Project Timeline", 16f, true));
@@ -168,7 +165,7 @@ public class PDFReport {
         List<String[]> rows = new ArrayList<>();
 
         int i = 1;
-        for (ReportData.TimelineEvent e : d.projectTimeline) {
+        for (ReportData.TimelineEvent e : data.projectTimeline) {
             rows.add(new String[] {String.valueOf(i++),safe(e.className),safe(e.event), safe(e.timeStamp)});
 
             /**Cap at 15 rows so the table always fits on one page. 
@@ -188,7 +185,7 @@ public class PDFReport {
         page.addElement(new TableElement(headers, rows, widths));
 
         page.addElement(new TextElement("Summary", 13, true));
-        page.addElement(new TextElement("Total class-lifecycle events logged: " + d.projectTimeline.size() + ".",11, false));
+        page.addElement(new TextElement("Total class-lifecycle events logged: " + data.projectTimeline.size() + ".",11, false));
         page.addElement(new TextElement("Many MODIFIED events after CLASS_CREATED = iterative refinement; "+ "repeated REMOVED events = design changes.", 11, false));
 
         return page;
@@ -205,12 +202,11 @@ public class PDFReport {
     }
 
     /** Creates a fresh PDF page and renders the composite tree onto it. */
-
-    private void renderPage(PDDocument doc, PageElement page) throws IOException {
+    private void renderPage(PDDocument document, PageElement page) throws IOException {
 
         PDPage physical = new PDPage();
-        doc.addPage(physical);
-        try (PDPageContentStream cs = new PDPageContentStream(doc, physical)) {page.render(cs, pageTopY);}
+        document.addPage(physical);
+        try (PDPageContentStream cs = new PDPageContentStream(document, physical)) {page.render(cs, pageTopY);}
 
     }
 }

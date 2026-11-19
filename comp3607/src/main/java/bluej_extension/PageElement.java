@@ -1,14 +1,10 @@
 package bluej_extension;
 
-/** @author Malik Blackman */
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
-
-public class PageElement implements ReportElement {
 
 /**
  * Composite node — holds a list of child elements and renders them top to bottom.
@@ -17,7 +13,10 @@ public class PageElement implements ReportElement {
  *
  * Because PageElement is itself a ReportElement, pages can technically be nested. 
  * We don't use that here but the pattern allows it.
+ * 
+ * @author Malik Blackman
  */
+public class PageElement implements ReportElement {
 
     private List<ReportElement> elements = new ArrayList<>();
 
@@ -32,7 +31,7 @@ public class PageElement implements ReportElement {
         /** Walk the tree in insertion order. Each child reports its own height,
          * so we don't need to know in advance what kind of element it is (text, image, table, etc.). 
          */
-        
+    
         for (ReportElement element : elements) {
             element.render(stream, currentY);
             currentY -= element.getHeight() + 10; 

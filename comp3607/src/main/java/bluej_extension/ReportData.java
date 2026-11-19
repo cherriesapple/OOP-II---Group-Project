@@ -37,7 +37,7 @@ public class ReportData {
     /** Compile outcomes (kept with the misspelling so callers already using the field don't break; worth renaming in a later refactor) */
 
     public int successfulComp;
-    public int failedComp;
+    public int failedCompilations;
 
     /** Flattened version of SessionModel.ClassLifecycleEvent for the report. */
 

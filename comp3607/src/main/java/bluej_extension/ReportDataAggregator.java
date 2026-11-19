@@ -39,7 +39,7 @@ public class ReportDataAggregator {
         data.totalErrors       = session.totalErrors;
         data.totalRuns         = session.sessionData.totalRuns;
         data.successfulComp    = session.sessionData.successfulCompilations;
-        data.failedComp        = session.sessionData.failedCompilations;
+        data.failedCompilations        = session.sessionData.failedCompilations;
 
         /**Activity map
          * LinkedHashMap preserves bucket order, 
