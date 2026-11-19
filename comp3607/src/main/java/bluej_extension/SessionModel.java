@@ -9,6 +9,15 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+
+
+
+
+
+
+
+
+
 @JsonPropertyOrder({
     "schema version", "status", "user_id", "session_length_minutes",
     "active", "idle_minutes", "total_compilations", "total_errors",

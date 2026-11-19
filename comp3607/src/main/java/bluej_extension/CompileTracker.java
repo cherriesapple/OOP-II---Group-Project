@@ -4,6 +4,7 @@ import java.io.File;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public class CompileTracker implements CompileListener{
     private int numSuccessfulCompiles = 0;
     private int numFailedCompiles = 0;
     private Timestamp compileStart;
-    private final SessionModel session;
+    private SessionModel session;
     private TelemetryEvent telEvent;
 
     private Long lastCompStartMs = null;                
@@ -141,6 +142,7 @@ public class CompileTracker implements CompileListener{
      * @param event This is an event that is triggered when either a user initiates a compilation.
      * 
      */
+
     @Override 
     public void compileWarning(CompileEvent event){
 
@@ -161,15 +163,11 @@ public class CompileTracker implements CompileListener{
     public void compileSucceeded(CompileEvent event){
         numCompiles++;
         numSuccessfulCompiles++;
-        compileSuccessfulFiles.add(event.getFiles());
 
-        
-        Map<String, Object> data = new HashMap<>();
-
+        Map<String, Object> data = new LinkedHashMap<>();
         data.put("status", "SUCCESSFUL");
-        data.put("duration", duration());
-        data.put("numFiles", event.getFiles().length);
-        data.put("Errors", numCompileErrors);
+        data.put("duration_ms", duration());
+        data.put("file_count", event == null ? 0 : event.getFiles().length);
         addTelEvent("COMPILE", data);
     }
 
@@ -182,14 +180,11 @@ public class CompileTracker implements CompileListener{
     public void compileFailed(CompileEvent event){
         numCompiles++;
         numFailedCompiles++;
-        compileFailedFiles.add(event.getFiles());
-
-        Map<String, Object> data = new HashMap<>();
-
+        
+        Map<String, Object> data = new LinkedHashMap<>();
         data.put("status", "FAILED");
-        data.put("duration", duration());
-        data.put("numFiles", event.getFiles().length);
-        data.put("Errors", numCompileErrors);
+        data.put("duration_ms", duration());
+        data.put("file_count", event == null ? 0 : event.getFiles().length);
         addTelEvent("COMPILE", data);
     }
 
