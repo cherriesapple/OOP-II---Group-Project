@@ -125,14 +125,17 @@ public class ActivityTracker {
         startTimeNs = System.nanoTime();
         lastActivityNs = -1;
         idleNs = 0;
-        this.lastTextLength =  editor.getTextLength();
-        this.lastCaretLoc = editor.getCaretLocation();
+
         buckets.clear();
         totalEdits = 0;
         
-        pollTimeline = new Timeline(new KeyFrame(Duration.millis(POLL_MS), e -> checkActivty()));
-        pollTimeline.setCycleCount(Timeline.INDEFINITE);
-        pollTimeline.play();
+        if (active != null) {
+            this.lastTextLength = active.getTextLength();
+            this.lastCaretLoc = active.getCaretLocation();
+            pollTimeline = new Timeline(new KeyFrame(Duration.millis(POLL_MS), e -> checkActivty()));
+            pollTimeline.setCycleCount(Timeline.INDEFINITE);
+            pollTimeline.play();
+        }
     }
 
 
@@ -142,9 +145,9 @@ public class ActivityTracker {
             pollTimeline = null;
         }
 
-        if(editor == null){
-            return;
-        }
+        if(startTimeNs == -1){
+        return;
+    }
 
         long now = System.nanoTime();
         long gapStart = (lastActivityNs < 0) ? startTimeNs : lastActivityNs;
@@ -169,7 +172,9 @@ public class ActivityTracker {
 
         session.idleMinutes = idleNs/NS_PER_MIN;
         session.sessionLengthMinutes = (now - startTimeNs)/NS_PER_MIN;
-        session.active = (now - startTimeNs - idleNs) > 0? "yes" : "no";
+        
+        long activeNs = now - startTimeNs - idleNs;
+        session.active = activeNs >= TimeUnit.SECONDS.toNanos(1) ? "yes" : "no"; 
 
         int currBucket = (int)((now - startTimeNs) / TimeUnit.MINUTES.toNanos(BUCKET_MINS));
        
@@ -183,6 +188,26 @@ public class ActivityTracker {
         startTimeNs = -1;
         lastActivityNs = -1;
         startI = null;
+    }
+
+    public long getStartTimeNs() {
+        return startTimeNs;
+    }
+
+    public long getLastActivityNs() {
+        return lastActivityNs;
+    }
+
+    public long getIdleNs() {
+        return idleNs;
+    }
+
+    public List<SessionModel.Bucket> getBuckets() {
+        return buckets;
+    }
+
+    public int getTotalEdits() {
+        return totalEdits;
     }
 }
    
