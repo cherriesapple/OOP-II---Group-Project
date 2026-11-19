@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:61653fab331a54c80914d12b6dda8f74310170e0fad7f0c95e00b8d5fb0f23ee",
+  "claims": [
+    {
+      "id": "claim_c448742eac6649bda55f5af387d60942",
+      "statement": "MyExtension is the declared BlueJ extension entry point and owns the shared session plus compile, class, package, invocation, and activity telemetry components.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/manifest.txt",
+          "version": "repo-file-v1:sha256:baac6968a59376b24a0d8e39447f92f7aff28c33b711640695cd421b9c1921df"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L5-L21",
+          "version": "repo-lines-v1:sha256:8856291d0c8706500aa25c2d795eb1ec9656c0ef4c92463b43680a054920ceb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5MzZlMmJiNTZlMzdjMGNiZWZkZDJhNmVlODAyNzJlYmQ3NjczMjZlNDI1NDhlY2Y3MDliMDFhODNlOWJhMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlZDc0MDYzYTYyYmZkYWM2ZGRkN2YwMGE3YTlhNWRiZWU4MGM2OGM4OTQ2ZGY1OWUwMTZkZDFhZTA3OWI5MzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4fb20fbe1884dd9a6475f0a09c9c09e",
+      "statement": "The startup listener registrations and shutdown finalization in MyExtension are blocked by unresolved merge-conflict markers around the implementation.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L13-L19",
+          "version": "repo-lines-v1:sha256:13bc3425f3cdad5db8efe4ff1a222e83fd8e57952c62b87042294af12b6e5a53:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDFkZjFmNWNiOGZlMTc3ZTczYjRiYWE5MWJlYmU0OTg5YWMzNGNkYmFmOTc0NGU1YmFmYjhmODllZjdhNzU2OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FhNjUyYzRlYjQzNGUzYjljZjEzODZlODEwNWMwM2E5NGMxNjlmYzliZDVhOTY5N2Q0OTU5NWI2YTk0YzhkMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTU4Y2I3YThiOTkwNjEyM2YwZDM4ZGE3ZTAzOGVlNDUzMGZiYWVmYWMwMzBiZmY2OWU5OTVmNGQ0YmJlNGQ5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDhjNTg3ZWYwMWFkMmEwMjNhNjk4NmRmOGQ4YjhlMDE1MTk4MWM1NWFmMjY4OTNlMmE1MGE2YzU5OGE5OTc2ZiJ9"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L23-L42",
+          "version": "repo-lines-v1:sha256:06e792636c12942788bed1f46c1817eb40220f3965f48889218dc3c80336b3c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MDA3NTdiMDYzM2M5YjdhM2Q1ZGIzOTdmZThjZTIxNjAwMzA5NWJjMzBjMWE1NzE4Mzc2Yzc2ZGJkN2RiZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhYTY1MmM0ZWI0MzRlM2I5Y2YxMzg2ZTgxMDVjMDNhOTRjMTY5ZmM5YmQ1YTk2OTdkNDk1OTViNmE5NGM4ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4YzU4N2VmMDFhZDJhMDIzYTY5ODZkZjhkOGI4ZTAxNTE5ODFjNTVhZjI2ODkzZTJhNTBhNmM1OThhOTk3NmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyYzdjZDlmNTliZGY2YmNiNjY4NmZhMjhmOTBmZjY2M2U2NDdkZWMwNTdlZTY2ZGQwNGMyNmIwNDA3YjkzNWYifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L64-L72",
+          "version": "repo-lines-v1:sha256:8fa2fd12156db6e205a50d654c21b91d65696d9a63d8ab069b033cb7d5e901b3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjczZDU3ODZhNjkxNDdmYzY5OTVjMDM3ZmNkZTRhYzQ3MTI3ZTA1Y2IwOGEwNDhhNTYzZjc5ZDExYzgzYTZhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZkOGZhZGFjODE0NjFlMTVmYmJkM2E5ZDkyYTg2MmI2OGZkMzYyNDVjYzhmZTJkNGFkMWQ3MjY0Y2ExODk2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJjN2NkOWY1OWJkZjZiY2I2Njg2ZmEyOGY5MGZmNjYzZTY0N2RlYzA1N2VlNjZkZDA0YzI2YjA0MDdiOTM1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzU5YzU5OGQwOGRhZGZjZmIwYzUwNDNkOTk4NzQyMWY3YmQ5OTQ0YjJjYTJkZTJmMmIwMDg5ZDllMzI1NWNiMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cc0a26e43f04f2da8a2ed658d0d848c",
+      "statement": "CompileTracker handles compile lifecycle callbacks and accumulates outcomes and errors in the shared session model.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L128-L151",
+          "version": "repo-lines-v1:sha256:6347180b589d1e6e1def0b6cb7b394d8edfed2ad2ec18e1498b2a14aab250797:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYTAxMWY0MWU3MjczZjQ5YzdiZTliMzJhYTlmYTk1NzcxMDk5Zjk2MWQ2YTBiY2NkM2U1MWIxNWYxNThjN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmZTI2ZmY5OWU3MTdmNmY1ODZmMWQxZjI4ZmU5NTI1M2I3NzFiMWUzOTE1YjA5NjQ3MWMwZTgwNWI4MWE4ZDAifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L60-L126",
+          "version": "repo-lines-v1:sha256:1a72012a2586dcd791b25c72d9659ef6b4480b672427c21f4ee3e6e866d07b10:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZGExMzlhOWViZWE4MjU3NjZhMGRmZjlmYTk4MjEwYjkwNjk5M2I4YTVhNTU2Y2QxZjlkODAwYTNiNzMyMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjMjc3NGRmYTY2NTQyOTBkYjRhNzgwYWExNmYzNjg3YzEyN2I4MzliZGE3ZWNhMTdkMzViY2NkYzFhNGIzOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d647f531dd5c4b8c89823c172b99d89b",
+      "statement": "ActivityListener starts ActivityTracker only for ClassEvent instances and reports editor lookup failures to stderr.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ActivityListener.java#L10-L38",
+          "version": "repo-lines-v1:sha256:28fc038d09b78031dbda3b78ffb691223a181e86aa54e014b56c62841746f070:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0YjZlZjMzOGQyMWM3ZGY1NDFjNWFhM2RhOWRkNWE2YjlkZjFmMzVmNGEyYTQ4Y2Y0YWVjZWY5MjRiMWRhOTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkZDY2NzQ3ZmVjNjc1ZDhhNzFhZTk4MDRiNjk5MmM0YjMxYjBhYTEzZjM3NTc4MWY5ZDgwODcyNWQyMzIzYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhMDk3MTJhNGQxNGFmYmIxYzAxNjk2MzM5ODkzNTQ1ZjlmNjgzODlmYWZmYmNjYjk0Y2E4MjdmZDNhZTBlMDYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T02:57:42.280Z"
+  }
+}

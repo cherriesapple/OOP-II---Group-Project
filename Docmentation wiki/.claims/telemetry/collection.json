@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:891d7d85c0c24ddd9b67563258dd211951c329a30caadab95656da4fb58340b6",
+  "claims": [
+    {
+      "id": "claim_f733f2958ad24c788530e3a423ac7710",
+      "statement": "CompileTracker converts compile lifecycle callbacks into session counters, intervals, telemetry events, and categorized errors.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L128-L151",
+          "version": "repo-lines-v1:sha256:6347180b589d1e6e1def0b6cb7b394d8edfed2ad2ec18e1498b2a14aab250797:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYTAxMWY0MWU3MjczZjQ5YzdiZTliMzJhYTlmYTk1NzcxMDk5Zjk2MWQ2YTBiY2NkM2U1MWIxNWYxNThjN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmZTI2ZmY5OWU3MTdmNmY1ODZmMWQxZjI4ZmU5NTI1M2I3NzFiMWUzOTE1YjA5NjQ3MWMwZTgwNWI4MWE4ZDAifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L60-L126",
+          "version": "repo-lines-v1:sha256:1a72012a2586dcd791b25c72d9659ef6b4480b672427c21f4ee3e6e866d07b10:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZGExMzlhOWViZWE4MjU3NjZhMGRmZjlmYTk4MjEwYjkwNjk5M2I4YTVhNTU2Y2QxZjlkODAwYTNiNzMyMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjMjc3NGRmYTY2NTQyOTBkYjRhNzgwYWExNmYzNjg3YzEyN2I4MzliZGE3ZWNhMTdkMzViY2NkYzFhNGIzOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_493d2f3db80345369a613782794ab142",
+      "statement": "PackageTracker and InvocationTracker append package and execution telemetry events to the shared session event list.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/InvocationTracker.java#L10-L47",
+          "version": "repo-lines-v1:sha256:b23b83666e556a4380b40c23c880b717e066252b2225921d206798c44ea75493:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkYjUxYzc4ODQwYzc2ZmViY2UxNWUzNjhkYWE2ZmZmODgwOGRlMTkyNjM4YWE3NGZhNTQ0MGNlYzMwMTE4ZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNzgyYmZkYzVmYzExYzBiNDZmMWM0YzY1MjQ3ZjFjYTUyZDQ0MzBmODYwMTU2YWZjZjg4N2MxM2Y4N2U3NWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlZWU2YTkwZTYyZGQxZDBlMjY4Mjg1ZjBiNmI0NDRhYjMzZmZhZDM0MjQ2ZjY1ZTFiY2JhMjRlNjZkNDAxMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjMWYxYTA1NGMwODYyOTUwZTIwMjQxM2Q0MTBlODZmNjQ0MjY0ODkyMDE1MDQ5MTkyMDAyMzVhMzRmMjBhZmIifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/PackageTracker.java#L10-L50",
+          "version": "repo-lines-v1:sha256:93d2d308717c14e294624655d6a42b8340546b88c6d0e41620d6fe5f4dca4a00:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwMzk2MDlhMjk1MjBiMjYyYTRlOWE4YjAyMGQ4NjJkYjcyYjY4NDc0NTExOTZmZDMzMjAzMDY1ODhmMDdlNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyMjRjZGY0MWYxM2E0MDAzODEwMmEzMWY2YzgzNTg2ODRhMWNlMDlkNTNkZGQwYzU2NTA5Mzk0YTM0ZTcwMTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8658c5cbe43c4e1390b4ebcd33b89bea",
+      "statement": "ClassTracker records class name, removal, and state changes as timestamped class-lifecycle events.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ClassTracker.java#L10-L69",
+          "version": "repo-lines-v1:sha256:38b2ecd7d3a1d149ea04b4e853eb91ab8d0dd560fa66d906dcfdab09d2f0eaff:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3NjU1NTdkMGEwZGMxNTNhYjlmMzMyYzdmN2RjM2Q5ZjI1N2FlN2Q2YmViMTU1MzBjNjg0OTdhYzA3NDI3YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzNWQ5Zjg0YzEyNDVlZDRlODk3ODY2MGQ2YmFjOTYwZmNlOGIzMzRmYjcxZGQ3ZmNlOTU2YjdiZGU5MTVkMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0OGE4OWJkZmQxY2U0YzdhNTRlNzhmZDFhNDc0ODQ0NDhkOWI3NmRhOTQ2ZjgzOGI3ZTUyYjk4YWQwYWIxYWYifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ClassTracker.java#L72-L78",
+          "version": "repo-lines-v1:sha256:383064d03a002283286f15f44c4e2153cc6971df619688c7a02da12c85b3c18e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFiNjhhOTBjNjk4ZDZkNzM2MDZhN2VkNTQ0YjA0N2E1OTU4YjVkNDM1NTUwMjY0NWMwZTk1ZTc2MjMzNThlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQxOWE2ZGNjMDRlMjEzYTNjN2E3N2E0NTZiMDFlNzZkMWVmNzhjZDAwYmJlYzFkOGY4MTQ1OGZlOTNlZGM1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmJkOTcwNjVlMjk0ODYyYjA3NWZjZTg1YWJiNDM4OGMyZDI1OGJiMzhkY2IwZGM5MTNmZGZlN2Y2Mjk3ZTM5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWI4MzVkYTkyZmU3NDBkYTUyMjNhMjhkMmU2MjViZTY2MGZkOWIzYWY0Y2ViOTE5MjI2YTVlZjMzMzVkYzliNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_feea0e55a6474adca2d202a9f016cc7a",
+      "statement": "ActivityTracker polls editor length and caret location every 500 milliseconds, uses three-minute buckets, and counts gaps of at least 180 seconds as idle.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ActivityTracker.java#L11-L30",
+          "version": "repo-lines-v1:sha256:cf3c847070fe155a3e4591a8708a44462bb0a5eea2dc306b698cd871b0fef590:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyY2M3NTBkMTY5ZjAwNjAxMzBjZGZkMTZiMTRjN2NlZmUyZDFjODZjNmZhMDg0MmE2NmY3ZjVhNzdiZGYwZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4ZGQ3ZWM0ZmM0ODJmNWUyMDA1YWI5ODIyYTczMGI5ODdhZmU4NmJhMzA4YWVkZTBiZmJjZjgwZmI0Y2EyMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZmNkYzQ0YTBkYTA5YWJmMmJjNjgyMDI4MTA0YzYwZDk1YzI5ODc2ZTVkNWUzN2JiYTY3NzI2ZmQyMDFlMzcifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ActivityTracker.java#L118-L156",
+          "version": "repo-lines-v1:sha256:a776e7dd65a793cc0009a29401ffe211bbb96d0f244b24700d8be0a777a33053:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YjM5NjgxZDJjNTllODQzNmQwMDQ3MTRlNThjOTAwYmZlNTFhNjQ0YzNkYjk4Mzk1NzE1Mzk5M2IyODE4OGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNzU2ZjQxOGZmOGNhZjE3MjY3ODMzNjJhZjMwNDJmZjU0MTgwOWE2YTEwMjkxN2YwMzg1NTExMWNiM2NlN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyOGMwNTgxNzU3M2ExNDJjZDVjYWYxNzVhNGQ2MTdjMWFjYmVmM2NlMWQ0MDc5ZTg0NTAxNWM4NThiNWUyNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjODRlZTYxOGUzM2JjYzIzMWUxYzgyYTA4ZmE5NzMwMDQxMTE0MmRkNDgwMTMxMzcyMDgyMWYxZmM4N2ZiN2IifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ActivityTracker.java#L75-L115",
+          "version": "repo-lines-v1:sha256:9ae1960b1f2cd493d88da8be6fe4b8538049a060294cb548dff67bc8ab841ee5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMzcyZjAwNzdiNzdjMTg3MDNjMjYwNzFiZTcxZmNhNWM0ZTM5OGU2MWMxODcwZWViNGM5MGI1N2IzNDM5M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyOGFkZWRiZTE0ZjAxMzQ0YWUyMWNlOTNkMGQ3YjgzN2ViZWY3NWFkMWNkMWFmNGNkMzI2ZjRiZmFmMTU2Y2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhNmM0YjM0MWMzMWUyOWI3YWI5MTAyODQzYzBiZjYxYmY5NmQ5YmY3M2VjZjcwNWVkZTMzMWJkYzVkMjcxMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhOTQ4MTBjNGI4ZGUzZDViYTA2ZGU1YzEyYzdiNWFhNDUwZjAyZTBmZGU1MzdlMDQ0OGRiNjJhMjFlMWIzNDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_edf636911a394f30bd643f3758bf2d0c",
+      "statement": "ClassTracker still contains unresolved merge-conflict markers that prevent the source from being compiled until reconciled.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ClassTracker.java#L72-L78",
+          "version": "repo-lines-v1:sha256:383064d03a002283286f15f44c4e2153cc6971df619688c7a02da12c85b3c18e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFiNjhhOTBjNjk4ZDZkNzM2MDZhN2VkNTQ0YjA0N2E1OTU4YjVkNDM1NTUwMjY0NWMwZTk1ZTc2MjMzNThlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQxOWE2ZGNjMDRlMjEzYTNjN2E3N2E0NTZiMDFlNzZkMWVmNzhjZDAwYmJlYzFkOGY4MTQ1OGZlOTNlZGM1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmJkOTcwNjVlMjk0ODYyYjA3NWZjZTg1YWJiNDM4OGMyZDI1OGJiMzhkY2IwZGM5MTNmZGZlN2Y2Mjk3ZTM5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWI4MzVkYTkyZmU3NDBkYTUyMjNhMjhkMmU2MjViZTY2MGZkOWIzYWY0Y2ViOTE5MjI2YTVlZjMzMzVkYzliNCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T02:57:42.280Z"
+  }
+}

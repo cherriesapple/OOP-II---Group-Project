@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3a03ae52e1739bf0b017154a2d0157ecb2f2d2a6a55bf5bb8789bdb4c8d9c166",
+  "claims": [
+    {
+      "id": "claim_81a4d6a040a741d7a95df6d236dc96df",
+      "statement": "SessionModel is the shared state boundary between BlueJ listeners and report or JSON output.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/JsonExporter.java#L10-L28",
+          "version": "repo-lines-v1:sha256:dceca443aa0a15d37095e251ebb86101918955e5aa3f1991d10ffca5860f773c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YmQ1NzQwNjZmOWIzNTA0OTMwN2M0MWUwZTgzMDY5NGI0MWQ2OWU1YTViY2MzNzY2ZmZmMTI0NjU2ZWU5M2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyY2VhMjEzNjhhMmI3ZTE2Y2I0ODdhZTg4OThlODQ2ZDlmZDU3MTliNTg5NjVkMDkzZDZiMjgyZmZmOTY0YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L5-L21",
+          "version": "repo-lines-v1:sha256:8856291d0c8706500aa25c2d795eb1ec9656c0ef4c92463b43680a054920ceb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5MzZlMmJiNTZlMzdjMGNiZWZkZDJhNmVlODAyNzJlYmQ3NjczMjZlNDI1NDhlY2Y3MDliMDFhODNlOWJhMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlZDc0MDYzYTYyYmZkYWM2ZGRkN2YwMGE3YTlhNWRiZWU4MGM2OGM4OTQ2ZGY1OWUwMTZkZDFhZTA3OWI5MzQifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ReportDataAggregator.java#L16-L63",
+          "version": "repo-lines-v1:sha256:3e0ae6a0e542683f5bbc404889e7bccccf6d8ef8fc58462c2c6e6b2a241ee1cb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYjU0NGE1ODg2MzQzNTBjMTkxNjlhODI0M2I1MzFiZjMwOTVlYjU3YzhmYjAzZTQ0ODM2OTQzZjA4MTY4ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzNmM1MjEwOGQyNDQwMGY5ZDMxYjA4ZWEzZjE1NjMxZmIyMjMyYTZhY2QyNmI1NThhZDI4Mjg0ZTE1ZmUwNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YzcxMzM0MzRhODk5NWFlMDg1OTgzOWRlZjhmMTRkZjk2ZjZhMzMwZTEyODEyNTBmODRkYzIzZTY0NGNjNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0YTNhY2NjMzE0NGE2MjI3ODdhNDAyNjUzNDVkODljOWNlZDc4ZjdhODQ5NzY3MTJkNmM4OGM3YzI3OWZmOWIifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/SessionModel.java#L10-L54",
+          "version": "repo-lines-v1:sha256:080c67f1fb9c3db33bdd478f428778eb4a9b295f9a0dea85ea7b15a9e7ebf8d7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NGQzNWI0MjYwZDFmNGQ2MjAzNmQwMzdmMDE4NTU0NWFhZjViZWJhMDZiZDUyMzJhNWQ4NmRhODM5MWYxYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkMjNlOWQzN2RjMDgzYWI2ZjA3ZGNiOTYwMTFjYTQwMDJlMmY4NzI2Y2JhNWY5NDBhMWY1NGY3MjIwNDU5NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0NjdjYzUxOTJlMDZlYjE5MmM1MGJlNzViZGNmNmNlZGUwNzEyNjE0ZGM5MTZhZGFmYzdlMjIwMzZmMDE5YWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_acaa4a825ee942619e7434531630f0e1",
+      "statement": "The architecture separates event collection, session state, report aggregation, PDF rendering, and JSON export into distinct classes.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/JsonExporter.java#L10-L28",
+          "version": "repo-lines-v1:sha256:dceca443aa0a15d37095e251ebb86101918955e5aa3f1991d10ffca5860f773c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YmQ1NzQwNjZmOWIzNTA0OTMwN2M0MWUwZTgzMDY5NGI0MWQ2OWU1YTViY2MzNzY2ZmZmMTI0NjU2ZWU5M2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyY2VhMjEzNjhhMmI3ZTE2Y2I0ODdhZTg4OThlODQ2ZDlmZDU3MTliNTg5NjVkMDkzZDZiMjgyZmZmOTY0YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/PDFReport.java#L35-L61",
+          "version": "repo-lines-v1:sha256:d623aa0e9753db237969b1f3571a6bb950ebf3243339a94b59a25a02ff5a0cf0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MjQ0MjFiZmI4MGEwNDRkOWMwOWJlODViNjkwY2Q3YjBjZjM3ZWJlNmVhZTNiZDU5Y2Y0NWQ3ODNlMzRmNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyYzE4ODJiZmYwZDUwZDdiMDlmMzY4ZTVmNDU4ODI2MGQzYTc0NjI0ZjQ2YmEzOGFjYWFmM2IzNTIzNWQ0NGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2ZjMxYWFhMDU0ZGNjYTY5NTVlOTg5NzFiNjVmZTcyNDViNWU2Zjk5YzdhMDJkYzkwMjQ1MGQzNDFkZjdjZGMifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ReportDataAggregator.java#L16-L63",
+          "version": "repo-lines-v1:sha256:3e0ae6a0e542683f5bbc404889e7bccccf6d8ef8fc58462c2c6e6b2a241ee1cb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYjU0NGE1ODg2MzQzNTBjMTkxNjlhODI0M2I1MzFiZjMwOTVlYjU3YzhmYjAzZTQ0ODM2OTQzZjA4MTY4ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzNmM1MjEwOGQyNDQwMGY5ZDMxYjA4ZWEzZjE1NjMxZmIyMjMyYTZhY2QyNmI1NThhZDI4Mjg0ZTE1ZmUwNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YzcxMzM0MzRhODk5NWFlMDg1OTgzOWRlZjhmMTRkZjk2ZjZhMzMwZTEyODEyNTBmODRkYzIzZTY0NGNjNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0YTNhY2NjMzE0NGE2MjI3ODdhNDAyNjUzNDVkODljOWNlZDc4ZjdhODQ5NzY3MTJkNmM4OGM3YzI3OWZmOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc1f9d297ef24f9697fe710e77475224",
+      "statement": "Unresolved merge-conflict markers in MyExtension prevent the intended startup and shutdown integration from being treated as verified working code.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L13-L19",
+          "version": "repo-lines-v1:sha256:13bc3425f3cdad5db8efe4ff1a222e83fd8e57952c62b87042294af12b6e5a53:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDFkZjFmNWNiOGZlMTc3ZTczYjRiYWE5MWJlYmU0OTg5YWMzNGNkYmFmOTc0NGU1YmFmYjhmODllZjdhNzU2OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FhNjUyYzRlYjQzNGUzYjljZjEzODZlODEwNWMwM2E5NGMxNjlmYzliZDVhOTY5N2Q0OTU5NWI2YTk0YzhkMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTU4Y2I3YThiOTkwNjEyM2YwZDM4ZGE3ZTAzOGVlNDUzMGZiYWVmYWMwMzBiZmY2OWU5OTVmNGQ0YmJlNGQ5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDhjNTg3ZWYwMWFkMmEwMjNhNjk4NmRmOGQ4YjhlMDE1MTk4MWM1NWFmMjY4OTNlMmE1MGE2YzU5OGE5OTc2ZiJ9"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L23-L42",
+          "version": "repo-lines-v1:sha256:06e792636c12942788bed1f46c1817eb40220f3965f48889218dc3c80336b3c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MDA3NTdiMDYzM2M5YjdhM2Q1ZGIzOTdmZThjZTIxNjAwMzA5NWJjMzBjMWE1NzE4Mzc2Yzc2ZGJkN2RiZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhYTY1MmM0ZWI0MzRlM2I5Y2YxMzg2ZTgxMDVjMDNhOTRjMTY5ZmM5YmQ1YTk2OTdkNDk1OTViNmE5NGM4ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4YzU4N2VmMDFhZDJhMDIzYTY5ODZkZjhkOGI4ZTAxNTE5ODFjNTVhZjI2ODkzZTJhNTBhNmM1OThhOTk3NmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyYzdjZDlmNTliZGY2YmNiNjY4NmZhMjhmOTBmZjY2M2U2NDdkZWMwNTdlZTY2ZGQwNGMyNmIwNDA3YjkzNWYifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L64-L72",
+          "version": "repo-lines-v1:sha256:8fa2fd12156db6e205a50d654c21b91d65696d9a63d8ab069b033cb7d5e901b3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjczZDU3ODZhNjkxNDdmYzY5OTVjMDM3ZmNkZTRhYzQ3MTI3ZTA1Y2IwOGEwNDhhNTYzZjc5ZDExYzgzYTZhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZkOGZhZGFjODE0NjFlMTVmYmJkM2E5ZDkyYTg2MmI2OGZkMzYyNDVjYzhmZTJkNGFkMWQ3MjY0Y2ExODk2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJjN2NkOWY1OWJkZjZiY2I2Njg2ZmEyOGY5MGZmNjYzZTY0N2RlYzA1N2VlNjZkZDA0YzI2YjA0MDdiOTM1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzU5YzU5OGQwOGRhZGZjZmIwYzUwNDNkOTk4NzQyMWY3YmQ5OTQ0YjJjYTJkZTJmMmIwMDg5ZDllMzI1NWNiMyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T02:57:42.280Z"
+  }
+}

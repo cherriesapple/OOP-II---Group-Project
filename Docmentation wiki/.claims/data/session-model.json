@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e7f8db0f39196be13992c9947842f7ad6205f226e9d26a6e271c4118b52da138",
+  "claims": [
+    {
+      "id": "claim_ded5b66270f84369af87ff7736f3c84d",
+      "statement": "SessionModel defines the top-level JSON fields and nested session, lifecycle, event, and derived structures.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/SessionModel.java#L10-L54",
+          "version": "repo-lines-v1:sha256:080c67f1fb9c3db33bdd478f428778eb4a9b295f9a0dea85ea7b15a9e7ebf8d7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NGQzNWI0MjYwZDFmNGQ2MjAzNmQwMzdmMDE4NTU0NWFhZjViZWJhMDZiZDUyMzJhNWQ4NmRhODM5MWYxYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkMjNlOWQzN2RjMDgzYWI2ZjA3ZGNiOTYwMTFjYTQwMDJlMmY4NzI2Y2JhNWY5NDBhMWY1NGY3MjIwNDU5NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0NjdjYzUxOTJlMDZlYjE5MmM1MGJlNzViZGNmNmNlZGUwNzEyNjE0ZGM5MTZhZGFmYzdlMjIwMzZmMDE5YWQifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/SessionModel.java#L56-L141",
+          "version": "repo-lines-v1:sha256:bd87da28d1c4af502c350c98a1700b4fc814619b77e68d818202b8cd9a97234b:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MmQ2MDYwNjkwMjcwZDA1MzY1M2MyN2U5YjEwN2U0MDA3MmI1NDk2ZTI4YjQ0Y2U4NDlhYjNmYmMxM2ViMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkMWFkZjE0ZDc3NjM0MjYxNzdiYjQxY2U4ODk1MTE0NTEzZmQ0MGQ0OGY2OThiYmFhZjMzMThkM2Q0MjY3NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MTVmZmIzNWMxNjNiNmMzOTk1MWI5ZDY3NWE2Njg0YWQ3N2I0YTYzNTEwNDU1MWQyZWY3YTk0YWZjNDI5MTQifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/template.json#L1-L48",
+          "version": "repo-lines-v1:sha256:debf7d56085863ec5a10710439101d6892c67f82a5a1aa61eaecf592b2dfa4c1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzZWFlN2U2YTRkM2M3MWJjYzk2MzI4YzUxOWZiYTI5NDFlZTQ4Njk2OGE2ZDYzMjJmYjA4Y2ViNDRlM2VmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1MWMwMTJjZjllNzFkODI3ODI4MjFkMjI0Nzk5YzMyMDQzNzZjOTU5MWU5MDM1NDI2M2QyZWE1MWRjMzg5ZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03de01f39f5d4db79ac74f920bf7bece",
+      "statement": "CompileTracker populates compilation counters, intervals, success rate, and categorized compile errors.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L128-L151",
+          "version": "repo-lines-v1:sha256:6347180b589d1e6e1def0b6cb7b394d8edfed2ad2ec18e1498b2a14aab250797:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYTAxMWY0MWU3MjczZjQ5YzdiZTliMzJhYTlmYTk1NzcxMDk5Zjk2MWQ2YTBiY2NkM2U1MWIxNWYxNThjN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmZTI2ZmY5OWU3MTdmNmY1ODZmMWQxZjI4ZmU5NTI1M2I3NzFiMWUzOTE1YjA5NjQ3MWMwZTgwNWI4MWE4ZDAifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L154-L166",
+          "version": "repo-lines-v1:sha256:a5fb5ff803de519f8a939e0dba27dff38714d5d4ed5aefaf98b8a2d0ad2b2096:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjY2ViMDkxZGExODRhNDIzNjhiYTdkODRhMWZjZjdiMmRjNzI0M2YwMmIzN2QzMmZhY2NlYWQ5Yjk1ZjJmNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhMGNjYjA2ODU1ZGM4Njk3MmRkNDZiMWUxODU0NDgxMzA4ODE1YTFmNTY3NzFmM2RkZWE3MTk5MjUzOTdmNzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1NTZkY2FmOTAxN2YyYjZjOTM3NDVlZjM4MTFlY2JkMWE5YTZjZTQwN2IwM2I0MDcxY2Q4OGU0MTQ2ZDg2ZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhN2I2NDY4M2M5ZTM1YjJiMGM0MjkwY2Y0M2FmN2ZmNDAzZDA3NjYxMWE2YmMzMmUwZWJkMDQ5MjE3MGQ5YjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a001486424784dfab49f8934660c3923",
+      "statement": "ActivityTracker populates session duration, active and idle minutes, and three-minute activity buckets.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ActivityTracker.java#L118-L156",
+          "version": "repo-lines-v1:sha256:a776e7dd65a793cc0009a29401ffe211bbb96d0f244b24700d8be0a777a33053:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YjM5NjgxZDJjNTllODQzNmQwMDQ3MTRlNThjOTAwYmZlNTFhNjQ0YzNkYjk4Mzk1NzE1Mzk5M2IyODE4OGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNzU2ZjQxOGZmOGNhZjE3MjY3ODMzNjJhZjMwNDJmZjU0MTgwOWE2YTEwMjkxN2YwMzg1NTExMWNiM2NlN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyOGMwNTgxNzU3M2ExNDJjZDVjYWYxNzVhNGQ2MTdjMWFjYmVmM2NlMWQ0MDc5ZTg0NTAxNWM4NThiNWUyNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjODRlZTYxOGUzM2JjYzIzMWUxYzgyYTA4ZmE5NzMwMDQxMTE0MmRkNDgwMTMxMzcyMDgyMWYxZmM4N2ZiN2IifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ActivityTracker.java#L75-L115",
+          "version": "repo-lines-v1:sha256:9ae1960b1f2cd493d88da8be6fe4b8538049a060294cb548dff67bc8ab841ee5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMzcyZjAwNzdiNzdjMTg3MDNjMjYwNzFiZTcxZmNhNWM0ZTM5OGU2MWMxODcwZWViNGM5MGI1N2IzNDM5M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyOGFkZWRiZTE0ZjAxMzQ0YWUyMWNlOTNkMGQ3YjgzN2ViZWY3NWFkMWNkMWFmNGNkMzI2ZjRiZmFmMTU2Y2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhNmM0YjM0MWMzMWUyOWI3YWI5MTAyODQzYzBiZjYxYmY5NmQ5YmY3M2VjZjcwNWVkZTMzMWJkYzVkMjcxMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhOTQ4MTBjNGI4ZGUzZDViYTA2ZGU1YzEyYzdiNWFhNDUwZjAyZTBmZGU1MzdlMDQ0OGRiNjJhMjFlMWIzNDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b2d953bf3f24025b08fa17ce6ee3b83",
+      "statement": "JsonExporter writes the SessionModel as pretty-printed JSON to src/files/Session_Data.json.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/JsonExporter.java#L10-L28",
+          "version": "repo-lines-v1:sha256:dceca443aa0a15d37095e251ebb86101918955e5aa3f1991d10ffca5860f773c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YmQ1NzQwNjZmOWIzNTA0OTMwN2M0MWUwZTgzMDY5NGI0MWQ2OWU1YTViY2MzNzY2ZmZmMTI0NjU2ZWU5M2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyY2VhMjEzNjhhMmI3ZTE2Y2I0ODdhZTg4OThlODQ2ZDlmZDU3MTliNTg5NjVkMDkzZDZiMjgyZmZmOTY0YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T02:57:42.280Z"
+  }
+}

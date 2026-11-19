@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:daaddab274dd1d5b558fd41e040c6a0eb5caeb4658290152d8a544d3b23f9a4d",
+  "claims": [
+    {
+      "id": "claim_2c8ea4ec594f4dc8ae46764ba2eddfb0",
+      "statement": "The comp3607 Maven project targets Java 21 and uses JUnit Jupiter with Surefire plus BlueJ, PDF, chart, JSON, and JavaFX dependencies.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/pom.xml#L58-L120",
+          "version": "repo-lines-v1:sha256:abfc25c1c8e84a132dc9376c687cb02fd4e1f9c0e7776804e4b40f1f645739f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlOTk1NWNjMTJhYzNmNTIzYjI0NTNjMjI4ZDE2OTcxYjkxZmQzNTNlMWRiNzAyMmQwZjg5Mjg1NDkyMDdjMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmYzA3M2M0MWQyMmYzOTU3OWUwNjkzYzQ3MThlM2UwNzIzYWE0YzYyODEyYWQzZmQzY2M1MjRkNDQ1OWU1OGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ZWUxNzI5NTQxODZhZGQwMTlkZDExYTllYWRhY2YzODQ0NTAzYjBjZDI2OTY2MWRlNTQzNDgzYjk2MWEyYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmYzc3YWQ1ZGQwMmEzYmQ1YWQ0Y2Q4Y2MxNzcxM2NlZWI1N2IzZDk3ODZlMGM0Yzk4YTJjZTU4NTczYjlkOWIifQ"
+        },
+        {
+          "resource": "repo://comp3607/pom.xml#L8-L56",
+          "version": "repo-lines-v1:sha256:115bdbf0eec9c6dd9dcfdf19f96721d8b957b13e4f8e439f7610ce0f7016881c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxNjM2OTc5MGZiZWI0YzgyNGEyMzAwNTczMWE1NDZlNTI2YTBjNzUxMThmNjQ2MzAwY2NmODgyODFjNDYwZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkMzIzNjcxMDYyMzRkMDdiZGMyMjdhOWRhNWJkYjI5ZDJkMTBlMDI1YTY4Njc2ZGM0NTg3MjQyOTdlNmZhOGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1NWUwMTIzMzgyNzAzN2ZhNmMyY2JkZTA3ODQ1ODA4YzEzOTIxZGY4NWNkNWFmNTQxZDhjMTNmNzI2YzE1YTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllZDk4YWJkYjhiNjQxNGE4YTc5MGY0NmFmODhhYmJhNzAyNGI4MTM4MjUxY2EzMTJkNzNlOWE0ZjM3NjhiYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f03387c25ee4106b06ea505ff9332d0",
+      "statement": "PackageTrackerTest and InvocationTrackerTest cover package and execution event payloads and counters.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/test/java/bluej_extension/InvocationTrackerTest.java#L10-L70",
+          "version": "repo-lines-v1:sha256:9f23f416a4e8de596dae71548627b07d9666fab95c3d0b284d6ed0550d567ab5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxY2JjYmZkM2IxNmQ3ZmExY2U0MmY5ZGJlY2IyZmJlODJkMDgwYzVjYmQ3YjVhYzFlZjc5N2Q3ODMzNWEyMTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmZmVhZjAyZjBjMzI1MjU1ZWUwNmFmMzg4ZGNiMjFhZmVmZTdkY2VkNDg1NDkzMjdmNGM5MzZmZDk4N2IyZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmNThiM2YzMTRlYjE4MGE1MzIzZGQ0NDRmNDQ3MDY5OTg0MDBmYTMzYzIwYzFmNzRjOGFiMjUxNzE2YzIzYTkifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/test/java/bluej_extension/PackageTrackerTest.java#L10-L51",
+          "version": "repo-lines-v1:sha256:87b2752dbf39000bec659ff628f75f2a6b42d8b0c7b4b84d6498eec466d26101:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNjk4NmExNzBiMTVjM2UxMzY1ODMxMzQ5MDY2ODY0NzlkY2NjNmJhNjZlYTZiMjg1MmI5NmFiOTAwMGYwZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYjIxZGVmZjc3MDJkNmYzNDk5ZGE4M2RmMjRiMWY3MTM3OTg5OWEzM2MxODE5YjM5NGNmNjBkYmJkZTFlNjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmZmVhZjAyZjBjMzI1MjU1ZWUwNmFmMzg4ZGNiMjFhZmVmZTdkY2VkNDg1NDkzMjdmNGM5MzZmZDk4N2IyZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlOWY4YjFiMjFjMjJiMmQ3ODQ5YmE3ZjI3MmNlMDk4NjM0NWE2NGQwMjA1OTQ3M2MwOTgyODI1NjNiOWYwMzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b813682ca554acf9c596bea8e9b67fd",
+      "statement": "ClassTrackerTest verifies lifecycle event storage and state-change description formatting.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/test/java/bluej_extension/ClassTrackerTest.java#L10-L44",
+          "version": "repo-lines-v1:sha256:d8c721af921da9626178c978f17d5e93266b77b8aacb08d2c9bc67cda3ae1307:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5ZTI0YmFhOGFiOGUwZjkyMjA4Mjg3MmM0MDI0MmZiMTNlYzJkMTk0ZjU1YjllMWIzNTJjN2UyOTFjZTA5ZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjNmMzY2Q4ZWViNTZlY2JkNmUxZjc4YWExZmVmYTdiMDY4NzNjYjE5N2IwZTAwNzlhMWQ0MGI5YTM4ZjIxMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5NDliNGY3YjgyYTNiZTUwNzhjMDUyOTJkMDkxMDY5YmRlYmZhYWQ2NWZkMGMzNDMxOWE0NTBmMmYwZWNiNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e4b773d9dbe49ccbb6dc11cef51e406",
+      "statement": "No successful test run is established because Maven is unavailable on PATH in the initialization environment.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/pom.xml#L58-L120",
+          "version": "repo-lines-v1:sha256:abfc25c1c8e84a132dc9376c687cb02fd4e1f9c0e7776804e4b40f1f645739f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlOTk1NWNjMTJhYzNmNTIzYjI0NTNjMjI4ZDE2OTcxYjkxZmQzNTNlMWRiNzAyMmQwZjg5Mjg1NDkyMDdjMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmYzA3M2M0MWQyMmYzOTU3OWUwNjkzYzQ3MThlM2UwNzIzYWE0YzYyODEyYWQzZmQzY2M1MjRkNDQ1OWU1OGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ZWUxNzI5NTQxODZhZGQwMTlkZDExYTllYWRhY2YzODQ0NTAzYjBjZDI2OTY2MWRlNTQzNDgzYjk2MWEyYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmYzc3YWQ1ZGQwMmEzYmQ1YWQ0Y2Q4Y2MxNzcxM2NlZWI1N2IzZDk3ODZlMGM0Yzk4YTJjZTU4NTczYjlkOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a992652f0d8d4ba9bde2487079846bae",
+      "statement": "Unresolved merge-conflict markers in MyExtension and ClassTracker are build blockers that must be reconciled before test success can be interpreted.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/ClassTracker.java#L72-L78",
+          "version": "repo-lines-v1:sha256:383064d03a002283286f15f44c4e2153cc6971df619688c7a02da12c85b3c18e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFiNjhhOTBjNjk4ZDZkNzM2MDZhN2VkNTQ0YjA0N2E1OTU4YjVkNDM1NTUwMjY0NWMwZTk1ZTc2MjMzNThlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQxOWE2ZGNjMDRlMjEzYTNjN2E3N2E0NTZiMDFlNzZkMWVmNzhjZDAwYmJlYzFkOGY4MTQ1OGZlOTNlZGM1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmJkOTcwNjVlMjk0ODYyYjA3NWZjZTg1YWJiNDM4OGMyZDI1OGJiMzhkY2IwZGM5MTNmZGZlN2Y2Mjk3ZTM5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWI4MzVkYTkyZmU3NDBkYTUyMjNhMjhkMmU2MjViZTY2MGZkOWIzYWY0Y2ViOTE5MjI2YTVlZjMzMzVkYzliNCJ9"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L13-L19",
+          "version": "repo-lines-v1:sha256:13bc3425f3cdad5db8efe4ff1a222e83fd8e57952c62b87042294af12b6e5a53:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDFkZjFmNWNiOGZlMTc3ZTczYjRiYWE5MWJlYmU0OTg5YWMzNGNkYmFmOTc0NGU1YmFmYjhmODllZjdhNzU2OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FhNjUyYzRlYjQzNGUzYjljZjEzODZlODEwNWMwM2E5NGMxNjlmYzliZDVhOTY5N2Q0OTU5NWI2YTk0YzhkMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTU4Y2I3YThiOTkwNjEyM2YwZDM4ZGE3ZTAzOGVlNDUzMGZiYWVmYWMwMzBiZmY2OWU5OTVmNGQ0YmJlNGQ5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDhjNTg3ZWYwMWFkMmEwMjNhNjk4NmRmOGQ4YjhlMDE1MTk4MWM1NWFmMjY4OTNlMmE1MGE2YzU5OGE5OTc2ZiJ9"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L23-L42",
+          "version": "repo-lines-v1:sha256:06e792636c12942788bed1f46c1817eb40220f3965f48889218dc3c80336b3c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MDA3NTdiMDYzM2M5YjdhM2Q1ZGIzOTdmZThjZTIxNjAwMzA5NWJjMzBjMWE1NzE4Mzc2Yzc2ZGJkN2RiZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhYTY1MmM0ZWI0MzRlM2I5Y2YxMzg2ZTgxMDVjMDNhOTRjMTY5ZmM5YmQ1YTk2OTdkNDk1OTViNmE5NGM4ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4YzU4N2VmMDFhZDJhMDIzYTY5ODZkZjhkOGI4ZTAxNTE5ODFjNTVhZjI2ODkzZTJhNTBhNmM1OThhOTk3NmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyYzdjZDlmNTliZGY2YmNiNjY4NmZhMjhmOTBmZjY2M2U2NDdkZWMwNTdlZTY2ZGQwNGMyNmIwNDA3YjkzNWYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T02:57:42.280Z"
+  }
+}
