@@ -35,8 +35,6 @@ public class JsonExporter {
 
     ObjectMapper mapper = new ObjectMapper();
     mapper.writerWithDefaultPrettyPrinter().writeValue(file, session);
-
-    System.out.println("JSON saved to: " + file.getAbsolutePath());
     
     }
 }
