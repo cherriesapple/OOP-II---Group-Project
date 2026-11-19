@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/extension-lifecycle.md": {
+      "pageVersion": "sha256:b8481ba38c381ffe4ce876cf9d7697f6f86ca942e83af2ac6fa92efb6ccfa4e6",
+      "completedBy": "copilot",
+      "completedRunId": "6de508ba-33ca-4839-a815-e7c3b52dff73",
+      "gitHead": "332fd605f7cf46ec7e5f848903e7a7477b724627",
+      "sourceFingerprint": "sha256:7586b2976182438ba64291d42e0770e3d14a2931c0ae617963e128de02abc108"
+    },
+    "/openwiki/architecture/session-model.md": {
+      "pageVersion": "sha256:9f07f8c97fd6157fac662881dc80e78036edd92a84018b1a124bd9a079291c76",
+      "completedBy": "copilot",
+      "completedRunId": "6de508ba-33ca-4839-a815-e7c3b52dff73",
+      "gitHead": "332fd605f7cf46ec7e5f848903e7a7477b724627",
+      "sourceFingerprint": "sha256:7586b2976182438ba64291d42e0770e3d14a2931c0ae617963e128de02abc108"
+    },
+    "/openwiki/development/build-and-tests.md": {
+      "pageVersion": "sha256:6b60ff17516b8562b82dc55211d62ccde3215c3b71545497882f143096e237de",
+      "completedBy": "copilot",
+      "completedRunId": "6de508ba-33ca-4839-a815-e7c3b52dff73",
+      "gitHead": "332fd605f7cf46ec7e5f848903e7a7477b724627",
+      "sourceFingerprint": "sha256:7586b2976182438ba64291d42e0770e3d14a2931c0ae617963e128de02abc108"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:35a2818e9aec98c08e8cb550f4a7858d61103281e5fb5cb96f0d0a55906d6b44",
+      "completedBy": "copilot",
+      "completedRunId": "6de508ba-33ca-4839-a815-e7c3b52dff73",
+      "gitHead": "332fd605f7cf46ec7e5f848903e7a7477b724627",
+      "sourceFingerprint": "sha256:7586b2976182438ba64291d42e0770e3d14a2931c0ae617963e128de02abc108"
+    },
+    "/openwiki/reporting/pdf-and-data-export.md": {
+      "pageVersion": "sha256:81d149c197b4025d2f260a92813aa1c7a11449587728b5f3cf390102d227bc4a",
+      "completedBy": "copilot",
+      "completedRunId": "6de508ba-33ca-4839-a815-e7c3b52dff73",
+      "gitHead": "332fd605f7cf46ec7e5f848903e7a7477b724627",
+      "sourceFingerprint": "sha256:7586b2976182438ba64291d42e0770e3d14a2931c0ae617963e128de02abc108"
+    },
+    "/openwiki/telemetry/class-and-invocation.md": {
+      "pageVersion": "sha256:f495b6fe2ccc4a6c651f733ba75a0a9134c5e00b12b8c5644c6b651a33ff20dc",
+      "completedBy": "copilot",
+      "completedRunId": "6de508ba-33ca-4839-a815-e7c3b52dff73",
+      "gitHead": "332fd605f7cf46ec7e5f848903e7a7477b724627",
+      "sourceFingerprint": "sha256:7586b2976182438ba64291d42e0770e3d14a2931c0ae617963e128de02abc108"
+    },
+    "/openwiki/telemetry/compilation.md": {
+      "pageVersion": "sha256:04555de4a72a3f27f510bc3c9bd7378db35155ddf890f6cb4fed4ec9d7893dc6",
+      "completedBy": "copilot",
+      "completedRunId": "6de508ba-33ca-4839-a815-e7c3b52dff73",
+      "gitHead": "332fd605f7cf46ec7e5f848903e7a7477b724627",
+      "sourceFingerprint": "sha256:7586b2976182438ba64291d42e0770e3d14a2931c0ae617963e128de02abc108"
+    },
+    "/openwiki/telemetry/editor-activity.md": {
+      "pageVersion": "sha256:07ea7b868daf4388e3641cce013a7257e63856e18be92215b4219fc153fa45dd",
+      "completedBy": "copilot",
+      "completedRunId": "6de508ba-33ca-4839-a815-e7c3b52dff73",
+      "gitHead": "332fd605f7cf46ec7e5f848903e7a7477b724627",
+      "sourceFingerprint": "sha256:7586b2976182438ba64291d42e0770e3d14a2931c0ae617963e128de02abc108"
+    }
+  }
+}

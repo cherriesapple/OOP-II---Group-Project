@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6b60ff17516b8562b82dc55211d62ccde3215c3b71545497882f143096e237de",
+  "claims": [
+    {
+      "id": "claim_a633cd01cfbd4b5aafd6026a82ed8727",
+      "statement": "The Maven module targets Java 21 and combines PDF, chart, JSON, BlueJ, JavaFX, JUnit, and Mockito dependencies.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/pom.xml#L12-L18",
+          "version": "repo-lines-v1:sha256:c8c896e0a45658fd3b276c0aa90b8187fa8b071cf4c58fbdc39f2ab4e3e45f90:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2I3NTFkNDkwODUwNWFmZjg4OWRkNTk1NmJiMDUxZGQwNGRmYWU3Zjg1NWU3OTQ3ZGIyMWRlNTg4ZTlkZTNiOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNiYjcwZTM4NjViN2U1YjY1MGM3NDE1YzQ5YTgzZmUzZTcyYWNhZWU4ZjE3ODBiY2I1MmRhNzdjNTFiMzA4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDkyZmEzYmI5MzlmMzc1NjBmZTBlZjNlODBjNmZkOGNjOGIzOTY2NmIyOGJkM2UwZDUzZjVhMGNhZmRhZTgxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTM3ZTc2ZDAxMDg2ZjhjMDNmOWUzY2NhNGI4ZmNlMDU0MjE5NjM3MmQ1MjE5OWFlMjM2NTlmN2NhOTU1YzA1OCJ9"
+        },
+        {
+          "resource": "repo://comp3607/pom.xml#L22-L82",
+          "version": "repo-lines-v1:sha256:f261b59618d338fa2b8e4dabb732dccfe2bf97022314e594ebfe6ac283a41e90:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlOTk1NWNjMTJhYzNmNTIzYjI0NTNjMjI4ZDE2OTcxYjkxZmQzNTNlMWRiNzAyMmQwZjg5Mjg1NDkyMDdjMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlN2E3ZGM4NTdhNjE2MjY2YmVlNjk0NGU1MTI1ZGQ3MjI3ZGZjNTQ5MTFlNTA3Yjk2MWE1OWNlNTAyMmQyN2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzN2U3NmQwMTA4NmY4YzAzZjllM2NjYTRiOGZjZTA1NDIxOTYzNzJkNTIxOTlhZTIzNjU5ZjdjYTk1NWMwNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1ODFmYTBmY2YxNmY4N2M5NjkyN2VmZjQxNDZlMTUzOWExNmZhMzZkYjg2OTlmMjRjZmYzOGUzN2U2OTJlYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_da4f5bff3dd2489c87e579e5536b36bc",
+      "statement": "The BlueJ API dependency is supplied by the repository-local lib/bluej.jar system path.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/pom.xml#L58-L64",
+          "version": "repo-lines-v1:sha256:0e0f0ea0ad516ad19fd0763390152b6f39ca3683b92416f67a40ece9e8895357:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmU5OTU1Y2MxMmFjM2Y1MjNiMjQ1M2MyMjhkMTY5NzFiOTFmZDM1M2UxZGI3MDIyZDBmODkyODU0OTIwN2MxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQzMjM2NzEwNjIzNGQwN2JkYzIyN2E5ZGE1YmRiMjlkMmQxMGUwMjVhNjg2NzZkYzQ1ODcyNDI5N2U2ZmE4YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTZlZTE3Mjk1NDE4NmFkZDAxOWRkMTFhOWVhZGFjZjM4NDQ1MDNiMGNkMjY5NjYxZGU1NDM0ODNiOTYxYTJiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTI2NTM0NTE5MTQwOWIzZGUxODhlNDE2NGMxN2Y4ZDZhN2ZmOGU2NzQ3ZDI1YjJkZjY1ZGE1NWMxMDQ4ODBiMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb1b8cdfeedb45eba22eae191afe50e4",
+      "statement": "Surefire and the Maven JAR plugin respectively run tests and package the extension using manifest.txt.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/manifest.txt#L1-L1",
+          "version": "repo-lines-v1:sha256:baac6968a59376b24a0d8e39447f92f7aff28c33b711640695cd421b9c1921df:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFhYzY5NjhhNTkzNzZiMjRhMGQ4ZTM5NDQ3ZjkyZjdhZmYyOGMzM2I3MTE2NDA2OTVjZDQyMWI5YzE5MjFkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFhYzY5NjhhNTkzNzZiMjRhMGQ4ZTM5NDQ3ZjkyZjdhZmYyOGMzM2I3MTE2NDA2OTVjZDQyMWI5YzE5MjFkZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://comp3607/pom.xml#L115-L120",
+          "version": "repo-lines-v1:sha256:5829eda70da6b20c551d20b6019ade1bf2892053328f28b6c60d4032232e38e2:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWJjM2U0YmJlYjA3MTdiNzg1ZDc0M2ZiNTMwNDc2Y2I3MjcwM2U1NGI4MWIzNzNkOWE4NjQ3NjU0NjIxMDY5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFkOWJjZTQ3MGVjYTk3MGQwM2I2MTA0NThjNWJmMDk2MzE4NjQxYTVhOGQ0NWY1MmJlY2Q1NjkxNzU0MmVjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjM0NTRiYzNlM2NiODFkZTAxZTQ5NWNhOWNiNDYzMmMwOWNiNTFjZTFhYTAyYjFiZWQ2MzhjNjI0ODBjNDc1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRjMDM0NTBjODU0Nzc4NjViMThlZjkzYjU1NmIxNGMwNmZiNTU2YWNjOWQ0NGFmYzY4ODZiMDBlNzU2Mjk1NSJ9"
+        },
+        {
+          "resource": "repo://comp3607/pom.xml#L138-L145",
+          "version": "repo-lines-v1:sha256:cf100147e00ebb2e62ada9f22f1fb857260f9abb92cb8462678fe321c9110230:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRlZDJkMjQ1Zjc3OTgyM2ZiZDUzMTdjNzgwZjQ1YzZmYjZmY2Y2ZGMyMGVkMzI1ZjFlY2I0MTgxYjE2NWZhMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzU4ZTk4Mjg5ZWJjMTJjM2NmOGYxODhkOGY4YTBhYjA4Mjc0ZjdhNzg4MGY3YThhODg5YzBhMDZmNjhkMzQ2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODRlN2ZlNzJhZWUwNzkzNmVkNjE3NjFiM2FmMWFhM2IzMTFhMzQ3ZmE0ZDJlODQ2ZTM4ODZmMWM3NmJkMTQ5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2U3NjhkZDBkMzcyNDllNTI5M2MwMDE5YjQ3Y2RiZDBjYWMxNDIxZmVlMzk5ZTlkNzVkMTgyNDJlMzgxNWZhOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a12bce181c7e44c6b3b1ec4fbb070c96",
+      "statement": "The test suite contains five Java test classes covering activity, compile, class, package, and invocation behavior.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/test/java/bluej_extension/ActivityTrackerTest.java",
+          "version": "repo-file-v1:sha256:49d668b5b0d746192ed6a6c63e9ea571365ed75630893660656f6140f8cdba35"
+        },
+        {
+          "resource": "repo://comp3607/src/test/java/bluej_extension/ClassTrackerTest.java",
+          "version": "repo-file-v1:sha256:e8085ea7e8cd80ddd7d0239e1b4bcbc01e192b47514affec9ec804cffc4d0091"
+        },
+        {
+          "resource": "repo://comp3607/src/test/java/bluej_extension/CompileTrackerTest.java",
+          "version": "repo-file-v1:sha256:8f7c564fad0e12ddeee060f6c066ba20e1b58d7b96c43da282880c9303128c28"
+        },
+        {
+          "resource": "repo://comp3607/src/test/java/bluej_extension/InvocationTrackerTest.java",
+          "version": "repo-file-v1:sha256:7117069c9aaa6690b136b64dc9740fb7ab06dc67ca0b14a78b7e45e0e1bd46f8"
+        },
+        {
+          "resource": "repo://comp3607/src/test/java/bluej_extension/PackageTrackerTest.java",
+          "version": "repo-file-v1:sha256:83965bd5d77e2091114d14d5d776a1eafd9fdb8d766cf3c3092081f2765e5e2a"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T04:33:22.309Z"
+  }
+}

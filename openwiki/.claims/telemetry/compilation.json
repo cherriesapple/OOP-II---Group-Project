@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:04555de4a72a3f27f510bc3c9bd7378db35155ddf890f6cb4fed4ec9d7893dc6",
+  "claims": [
+    {
+      "id": "claim_f564da6f702941829de1b44830773b79",
+      "statement": "CompileTracker implements BlueJ compile callbacks and records start, success, failure, error, and warning state in shared session structures.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L77-L134",
+          "version": "repo-lines-v1:sha256:bf81cdcc0774306868414bd9bf8e9104bcd62ad17ef2cb999321c68fb50941d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZWQ4ODBkZGExOTZkNDcyNmNiMmQ5ZGVkMTdiYjJiNGMxMWNiYzY5MWRhMzBmM2EyNDc5MDQxZmJlN2JjOGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyYzdjZDlmNTliZGY2YmNiNjY4NmZhMjhmOTBmZjY2M2U2NDdkZWMwNTdlZTY2ZGQwNGMyNmIwNDA3YjkzNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhYjE5YzQ0YmFhOWFlMmNmNTViOTA5MjJmNTM1OGI1M2IxMTA4MTM1ODNmYWQ3ODI2NDhjY2I0YmJhOTM2MTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d9f3a5a448143cb950ff46c7a99c596",
+      "statement": "Compile start callbacks calculate intervals from the prior compile start and append COMPILE STARTED telemetry events.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L77-L92",
+          "version": "repo-lines-v1:sha256:65f8fe68c6eec1024ea1c7a44fe7955a15936349717720654ab81e598688de31:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZWQ4ODBkZGExOTZkNDcyNmNiMmQ5ZGVkMTdiYjJiNGMxMWNiYzY5MWRhMzBmM2EyNDc5MDQxZmJlN2JjOGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyYzdjZDlmNTliZGY2YmNiNjY4NmZhMjhmOTBmZjY2M2U2NDdkZWMwNTdlZTY2ZGQwNGMyNmIwNDA3YjkzNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmOTk5ODgxZjRmNjFiN2I1ODUzNjc5ZmQ1ZGEyNjQ4NzVkYzVmNjkyODFlZTE3NTlmN2YzZjcwZTUzZjdjNzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_16a74b3b77c7476a9f83232d2ed380da",
+      "statement": "populateSession copies compile totals into SessionModel and derives interval and categorized error fields.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L136-L166",
+          "version": "repo-lines-v1:sha256:2145fd03c764b3784ee5fbd0c1e8ff8cf36dc8e4e536fecf3920b89be8f0cbba:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NmZiM2EzZjIzYjZlOWUzOTdmZWJkYzI2MGFhM2U5MDBlMTA3NmM5YmM4ODM1OWVhYjdjZThjMWQ4NzM1MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhMGNjYjA2ODU1ZGM4Njk3MmRkNDZiMWUxODU0NDgxMzA4ODE1YTFmNTY3NzFmM2RkZWE3MTk5MjUzOTdmNzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMDE1YmQ3YmY2NGNhMTg1MmY1OGI1MjA2YjliNzg4MWFlNGM4MTBjYjhiMTAzYWQ0MmI3OWUzODcxMzdhNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhN2I2NDY4M2M5ZTM1YjJiMGM0MjkwY2Y0M2FmN2ZmNDAzZDA3NjYxMWE2YmMzMmUwZWJkMDQ5MjE3MGQ5YjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5909fce1ecf341369f64d3650759dc6c",
+      "statement": "Error messages are classified into missing_symbol, type_mismatch, syntax, uninitialized, missing_return, or other categories.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L57-L75",
+          "version": "repo-lines-v1:sha256:b0cbefaffda4cf52d6ec2302a19d3cfd292d4f1f131cd4f5a83a9a90f4ded280:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwYWJiMTFhZDM4MWI5YzRkYjVmYTY1YmUwYTFkMjE3YzEyMDY0Zjc5ZWQzNGU2NmI3ODM1NGFlNTA3YTgxYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjMWI4MzEyMzNmNmY1NWI2MTU2Nzg5MjNkNTM0MjRlNWNhOGZmNjRiMDBlYzQ1NmM3YWE2NDAzNjEwODgxYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c8274db003442e3ba53886c1e6bcddb",
+      "statement": "CompileTrackerTest covers success and failure counts, telemetry events, warning handling, intervals, repeated population, and mixed outcomes.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/test/java/bluej_extension/CompileTrackerTest.java#L36-L126",
+          "version": "repo-lines-v1:sha256:0b689bf3a55c7521eaa4265faf27651db6e43908badef4ff55605c4f3b9631ac:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1Mzc1ZDQ4YjY1NTM2Y2JiMzJmZWY3MWVkNmIxMDU3NmJlMWJlZWUyZTU0YWY4NGE3NzJkNzQ3ZjBhN2M5ZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NWY4ZWU0ODk3MDQyOWIxYzM4OGJlMTVlODljY2JhNDllMmU1MTNjNGViMzlmYmJhYzg0YWEzNjY4Y2M1ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiMDU0MzEzZGVmNjhjOWJhODUyMWE2MmQ2ZTBiNDgyMWI0MjA5YWRhMDg5ODA4MjJjYTlmNmNiNDU3ZDc0ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0ZDQ2ZGM2YTIwOTBlNzNhZDEwNDEzMzQ3ODZkNDQ3YWM2YzU2MWJhNDg2YmQ5Y2UzZWRiMTU1YmVmYThjNjkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T04:33:22.309Z"
+  }
+}

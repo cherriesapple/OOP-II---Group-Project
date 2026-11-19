@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b8481ba38c381ffe4ce876cf9d7697f6f86ca942e83af2ac6fa92efb6ccfa4e6",
+  "claims": [
+    {
+      "id": "claim_4cbe9e7db8c54faf8962d234d76c79d4",
+      "statement": "MyExtension owns one SessionModel and shares it with all package, class, invocation, compile, and activity tracker components.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L11-L16",
+          "version": "repo-lines-v1:sha256:6cb2f29249fb100bd57252d24406ebd4becc26e7825c41c55443bd0d60e78721:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTA5Mjk0NDE2N2Q1ZjhlNzI4ZmViMWVhNGU1Y2M5MDlhNTg1ZmJkYWEwOWU2NTFkYzM3NjcxN2YyMDc3YzkwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWVkOTg5MTlmZjdkNjMzMWY0OWI2ZDRlMDg0YThlOWFhZTRjNDRjNjcxNzNlMzE2ZWI4MjI2MjlhYzhhZTU4MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDIxODJlM2MzMDIwMjQyYzAzNDhlMWZmOGNhNDhhNTlmYTZiOTNmOTc3NWM3MjQ0MWMwOTdmODhkNWI1NDQ5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDhjNTg3ZWYwMWFkMmEwMjNhNjk4NmRmOGQ4YjhlMDE1MTk4MWM1NWFmMjY4OTNlMmE1MGE2YzU5OGE5OTc2ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_64019d18502b46c091c3430139bba861",
+      "statement": "MyExtension registers each telemetry listener with the corresponding BlueJ API during startup.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L20-L27",
+          "version": "repo-lines-v1:sha256:af864c02c608632d7a346a56b9292196691faeb5b555727c3cb9bdfab7b36506:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTkwMDc1N2IwNjMzYzliN2EzZDVkYjM5N2ZlOGNlMjE2MDAzMDk1YmMzMGMxYTU3MTgzNzZjNzZkYmQ3ZGJmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQxOWE2ZGNjMDRlMjEzYTNjN2E3N2E0NTZiMDFlNzZkMWVmNzhjZDAwYmJlYzFkOGY4MTQ1OGZlOTNlZGM1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDhjNTg3ZWYwMWFkMmEwMjNhNjk4NmRmOGQ4YjhlMDE1MTk4MWM1NWFmMjY4OTNlMmE1MGE2YzU5OGE5OTc2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2FlMGQ1YzU1ODM3ZjM0MWUzYTBmOTBiNDVlNWEzMWM3YzExMjNmMDZkZGFkYWZjYjYyNTI5NjRkY2FjNzQ3MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f50b6a1d46864605aa24231c28bb31fb",
+      "statement": "Termination stops activity tracking and compilation collection, populates derived compile state, and marks the shared session complete.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/CompileTracker.java#L136-L166",
+          "version": "repo-lines-v1:sha256:2145fd03c764b3784ee5fbd0c1e8ff8cf36dc8e4e536fecf3920b89be8f0cbba:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NmZiM2EzZjIzYjZlOWUzOTdmZWJkYzI2MGFhM2U5MDBlMTA3NmM5YmM4ODM1OWVhYjdjZThjMWQ4NzM1MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhMGNjYjA2ODU1ZGM4Njk3MmRkNDZiMWUxODU0NDgxMzA4ODE1YTFmNTY3NzFmM2RkZWE3MTk5MjUzOTdmNzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMDE1YmQ3YmY2NGNhMTg1MmY1OGI1MjA2YjliNzg4MWFlNGM4MTBjYjhiMTAzYWQ0MmI3OWUzODcxMzdhNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhN2I2NDY4M2M5ZTM1YjJiMGM0MjkwY2Y0M2FmN2ZmNDAzZDA3NjYxMWE2YmMzMmUwZWJkMDQ5MjE3MGQ5YjgifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/MyExtension.java#L48-L54",
+          "version": "repo-lines-v1:sha256:24f8775068d048828e677ed4eca735cebeb7aa3f9f75d757201476780b3102ea:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjczZDU3ODZhNjkxNDdmYzY5OTVjMDM3ZmNkZTRhYzQ3MTI3ZTA1Y2IwOGEwNDhhNTYzZjc5ZDExYzgzYTZhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y0NTcwMDQxOTAxMWFlZTI0MTgwMTFjNTE3NDM5YjcyNDhhNzQ1ODM5M2ZmZDU5MDVhMDc0NDM4MGVmMThiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJjN2NkOWY1OWJkZjZiY2I2Njg2ZmEyOGY5MGZmNjYzZTY0N2RlYzA1N2VlNjZkZDA0YzI2YjA0MDdiOTM1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzc4YjUyZjhhODZmZWNiMTVjNjMwOTc0NjU1YTk3NDYxY2RiOTFiMTZlN2NjMmNlNDBmZWNkZDNiODEwNTRiMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_031ff64467304f22a439e1be2ad5dcbb",
+      "statement": "The SessionModel is the shared state contract for status, timing, counters, class lifecycle, telemetry events, derived compile metrics, and activity buckets.",
+      "evidence": [
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/SessionModel.java#L125-L172",
+          "version": "repo-lines-v1:sha256:8fbde399d14c4d28a78ed7258c6a876e46e03914de6832d4475618c3764de9e0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMmI3YjJmOWIzNDk5YzZhZjE3Mzc2MDY3YzI4M2EzODgzZTkyMmQxYTAyOWY4N2VkYzVkZWE5MDRiN2YyZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNDcwZWIzNmRmOWM2ZGQxYTVmMzFkNjNhYTExZmVkODgwOWM5ZDIzNTgxM2QzZmNlOWEwZTgxZDliMWNiOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkNmVhMGRmN2YwZjNjNTMyMDVkOGQ0ZTcwZjBhYzFjNGNjNmRkNTlkY2E4Y2UwYjc1NzkzZTkxYmFhZTRlOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxNWFhZDQwZTFlNTY1YTE5YmQzMTUxNTgzYTZmNDYzMDI1NmE1M2E5OWZmZWRiYzEzNTA0NDA1YzAxNzk1OTkifQ"
+        },
+        {
+          "resource": "repo://comp3607/src/main/java/bluej_extension/SessionModel.java#L29-L62",
+          "version": "repo-lines-v1:sha256:cffee3218c742021859d4f856735463d5f0503f9342d7fcbbf224b270b70159f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhOTE4YmJiMzcyNzM3NGJhYjVkZDY4OWZiZDFhMWE4YWEwZjIzYTA1MGFjNTA2NzhlMjAyMzM2MzJlODRiYTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0N2E5ZDVmMzNkNTI1MTk2MjE4MDJhMzMxN2IyMGU5OTNhMjZlODJhZDY5NWNiY2QwNTg1OGQ0OGY3NDk4ODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1MGY2M2JmMzU2Yjc1MDFhM2YzODc5MzUxYzIwMjc5ODlkNjA1YjNkOTdiNjkyMDFiZWZhZThjNmZkNTUwZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0MTEzZDNlOTE0MmRjYjc0ZDM0OGU0MGNhMzdhNDM5NzZlYjhkNzgwNDdmMGVlM2I5YzRkMWIzN2I0OTdjYWIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-19T04:33:22.309Z"
+  }
+}
