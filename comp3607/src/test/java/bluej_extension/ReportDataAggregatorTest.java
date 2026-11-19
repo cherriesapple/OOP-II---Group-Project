@@ -82,16 +82,16 @@ class ReportDataAggregatorTest {
 
     @Test
     void activityBucketsToLinkedHashMap() {
-        SessionModel.Bucket b1 = new SessionModel.Bucket();
-        b1.bucketStart = "2026-10-01T10:00:00Z";
-        b1.editSignals = 5;
+        SessionModel.Bucket bucket1 = new SessionModel.Bucket();
+        bucket1.bucketStart = "2026-10-01T10:00:00Z";
+        bucket1.editSignals = 5;
 
-        SessionModel.Bucket b2 = new SessionModel.Bucket();
-        b2.bucketStart = "2026-10-01T10:03:00Z";
-        b2.editSignals = 12;
+        SessionModel.Bucket bucket2 = new SessionModel.Bucket();
+        bucket2.bucketStart = "2026-10-01T10:03:00Z";
+        bucket2.editSignals = 12;
 
-        session.derived.activityTimeline.buckets.add(b1);
-        session.derived.activityTimeline.buckets.add(b2);
+        session.derived.activityTimeline.buckets.add(bucket1);
+        session.derived.activityTimeline.buckets.add(bucket2);
 
         ReportData data = ReportDataAggregator.aggregate(session);
 
