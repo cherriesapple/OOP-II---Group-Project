@@ -1,82 +1,96 @@
 package bluej_extension;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
+import bluej.extensions2.BClass;
 import bluej.extensions2.event.ClassEvent;
 import bluej.extensions2.event.ClassListener;
 import bluej_extension.SessionModel.ClassLifecycleEvent;
-
-//Need to add code for a class being created
 
 public class ClassTracker implements ClassListener {
 
     private int numDeletedClasses = 0;   
     private ClassLifecycleEvent myEvent;
     private final SessionModel session;
+    private final ArrayList<BClass> classes = new ArrayList<>();
     
     public ClassTracker (SessionModel session){
         this.session = session;
     }
 
-    private ClassLifecycleEvent createClassLifecycleEvent(String name, String event, Timestamp time){
+    public String formatStateChangeEvent(boolean isCompiled, boolean isNewClass, String className) {
+        String eventDescription = "MODIFIED";
+
+        if (isCompiled)
+            eventDescription += "[Compilation Attempt] " + "ClassName: " + className;
+        
+        if (isNewClass)
+            eventDescription = "CLASS_CREATED";
+        else
+            eventDescription += " " + className + " was modified | Waiting to compile";
+        
+        return eventDescription;
+    }
+
+    public void storeTelemetryEvents(String name, String event, Timestamp time){
         
         myEvent = new ClassLifecycleEvent();
         myEvent.className = name;
         myEvent.timestamp = time;
         myEvent.event = event;
-        return myEvent;
+        session.classLifecycle.add(myEvent);  
+    }
+
+    public boolean isNewClass(ClassEvent event){
+        
+        if (classes.isEmpty()){
+            try{
+            for (BClass b : event.getPackage().getClasses()){
+                classes.add(b);
+                }
+            }catch(Exception e){e.getMessage();}
+        }
+
+        if (!classes.contains(event.getBClass())){
+            classes.add(event.getBClass());
+            return true;
+        }
+
+        return false;
+       
     }
     
     @Override 
     public void classNameChanged(ClassEvent event){
+
         Timestamp time = new Timestamp(System.currentTimeMillis());
-
-        String eventDescription = "NAME_CHANGED [New Name: " + event.getBClass().getName() + "]";
-        ClassLifecycleEvent classEvent = createClassLifecycleEvent(event.getOldName(), eventDescription, time);
-        session.classLifecycle.add(classEvent);  
-
-        System.out.println( event.getOldName()+ " changed to " + event.getBClass().getName());
-
+        String eventDescription = "NAME_CHANGED [New Name: " + event.getBClass().getName() + "]\n[Old Name: " + event.getOldName() + "]";
+        storeTelemetryEvents(event.getOldName(), eventDescription, time);
     }
 
     @Override
     public void classRemoved(ClassEvent event){
         Timestamp time = new Timestamp(System.currentTimeMillis());
-
-        ClassLifecycleEvent classEvent = createClassLifecycleEvent(event.getBClass().getName(), "REMOVED", time);
-        session.classLifecycle.add(classEvent);  
+        String eventDescription = "[CLASS_REMOVED]" + event.getBClass().getName(); 
 
         this.numDeletedClasses++;
-
-        System.out.println(event.getBClass().getName() + " was deleted");
+        storeTelemetryEvents(event.getBClass().getName(), eventDescription, time);
     }
 
     @Override
     public void classStateChanged(ClassEvent event){
         Timestamp time = new Timestamp(System.currentTimeMillis());
-        String eventDescription = "MODIFIED";
         String className = event.getBClass().getName();
-
-        if (event.isClassCompiled()){
-             System.out.println( "An attempt to compile " + className + " was made");
-             eventDescription+= "[Compilation Attempt]";
-        }
-          
-        else if (event.getOldName() == null){
-             System.out.println(className + " was created");
-             eventDescription = "CLASS_CREATED";
-        }
-           
-        else{
-            System.out.println(className + " was modified | Waiting to compile");
-        }
-            
-
-        ClassLifecycleEvent classEvent = createClassLifecycleEvent(event.getBClass().getName(), eventDescription, time);
-        session.classLifecycle.add(classEvent); 
+        String eventDescription = formatStateChangeEvent(event.isClassCompiled(), isNewClass(event), className);
+        storeTelemetryEvents(className, eventDescription, time);
 
     }
 
+<<<<<<< HEAD
+    public int getNumDeletedClasses(){return this.numDeletedClasses;}
+=======
     public int getNumDeletedClasses() {
         return numDeletedClasses;
     }
+>>>>>>> 3e26be7cf419b5197ceebc76b9fc44b36f142577
 }

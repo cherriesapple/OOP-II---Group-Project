@@ -15,46 +15,49 @@ public class PackageTracker implements PackageListener {
     public PackageTracker(SessionModel session){
         this.session = session;
     }
-    
-    private TelemetryEvent createTelemetryEvent(){
-        myEvent.timestamp = new Timestamp(System.currentTimeMillis());
-        myEvent = new TelemetryEvent();
 
-        return myEvent;
+    public void storeTelemetryEvents(String description, Timestamp time){
+        myEvent = new TelemetryEvent();
+        myEvent.timestamp = time;
+        
+        myEvent.data.put("[Status]", description);
+        session.events.add(myEvent);
+    }
+
+    public void recordPackageEvent(String packageName, boolean hasOpened){
+        Timestamp time = new Timestamp(System.currentTimeMillis());
+        String action = hasOpened ? "Created/Opened" : "Deleted/Closed";
+        eventDescription = action + " Package: " + packageName;
+        storeTelemetryEvents(eventDescription, time); 
+    }
+
+    public void recordPackageError(String errorMessage) {
+        Timestamp time = new Timestamp(System.currentTimeMillis());
+        eventDescription = "Error retrieving package name: " + errorMessage;
+        storeTelemetryEvents(eventDescription, time); 
     }
 
     @Override 
     public void packageClosing(PackageEvent event){
-        
-        myEvent = createTelemetryEvent();
     
         try {
-            eventDescription = " Deleted/Closed Package: " + event.getPackage().getProject().getName();
-            System.out.println("Deleted/Closed Package: " + event.getPackage().getProject().getName());
-        } catch (ExtensionException e){
-            eventDescription = " Error retrieving package name: " + e.getMessage();
-            System.out.println("Error retrieving package name: " + e.getMessage());
-        }   
+            String packageName = event.getPackage().getProject().getName();
+            recordPackageEvent(packageName, false);
 
-        myEvent.data.put("[Status]", eventDescription);
-        session.events.add(myEvent);
+        } catch (ExtensionException e){
+            recordPackageError(e.getMessage());
+        }
     }
 
     @Override 
     public void packageOpened(PackageEvent event){
-
-        myEvent = createTelemetryEvent();
     
         try {
-            eventDescription = "Created/Opened Package: " + event.getPackage().getProject().getName();
-            System.out.println("Created/Opened Package: " + event.getPackage().getProject().getName());
+            String packageName = event.getPackage().getProject().getName();
+            recordPackageEvent(packageName, true);
         } catch (ExtensionException e){
-            eventDescription = "Error getting package name: " + e.getMessage();
-            System.out.println("Error getting package name: " + e.getMessage());
+            recordPackageError(e.getMessage());
         }   
-
-        session.events.add(myEvent);
     }
-
 
 }
