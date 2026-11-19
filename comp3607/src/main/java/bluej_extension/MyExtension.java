@@ -2,8 +2,9 @@ package bluej_extension;
 
 import java.io.File;
 import java.io.IOException;
-
 import java.sql.Timestamp;
+import java.time.Instant;
+
 import bluej.extensions2.BlueJ;
 import bluej.extensions2.Extension;
 import bluej_extension.SessionModel.TelemetryEvent;
@@ -26,7 +27,6 @@ public class MyExtension extends Extension
     private final ConsoleSummary summary = new ConsoleSummary();
     private final CompileTracker compileTracker = new CompileTracker(session);
     private final ActivityListener activityListener = new ActivityListener(session);
-    private final JsonExporter jsonExporter = new JsonExporter(session);
     private BlueJ bluejProxy;
     
     /**
@@ -77,23 +77,31 @@ public class MyExtension extends Extension
 
     @Override
     public void terminate() {
+        TelemetryEvent console = new TelemetryEvent();
+        console.timestamp = new Timestamp(System.currentTimeMillis());
+        console.type = "[CONSOLE_OUTPUT_SUMMARY]: ";
+        console.data.put("Total_Output_Messages: ", summary.getMessageCount());
+
+        session.status = "COMPLETE";
+        session.sessionData.endTime = Instant.now().toString();
+
+        activityListener.getActivityTracker().stopTracker();
+        compileTracker.populateSession();;
 
          try {
-             // JSON export
             new JsonExporter().export(session);
 
-            // PDF export (timestamped, session-named file in src/files/)
             File folder = new File("src/files");
             folder.mkdirs();
             String name = PDFReport.suggestedFileName(session.sessionData.projectName);
             new PDFReport().generateReport(session, new File(folder, name).getPath());
 
-    } catch (IOException e) {
+        } catch (IOException e) {
 
-            System.err.println("Telemetry export failed: " + e.getMessage());
+                System.err.println("Telemetry export failed: " + e.getMessage());
 
-    }
-            System.out.println("End of Telemetry Extension");
+        }
+                System.out.println("End of Telemetry Extension");
 
     }
 
