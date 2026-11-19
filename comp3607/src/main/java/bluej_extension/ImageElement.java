@@ -1,7 +1,5 @@
 package bluej_extension;
 
-/** @author Malik Blackman */
-
 import java.io.IOException;
 
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -11,6 +9,7 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
  * Wraps a PDFBox image object so it can be dropped into a page tree like
  * any other element. Width and height are required because the chart PNGs
  * come out at fixed pixel sizes but need to scale down to fit A4/Letter.
+ * @author Malik Blackman 
  */
 public class ImageElement implements ReportElement {
     

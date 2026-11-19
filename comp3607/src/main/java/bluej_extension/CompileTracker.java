@@ -48,7 +48,8 @@ public class CompileTracker implements CompileListener{
     /**
      * Updates the session events with the compilation event's timestamp, type and relevant information
      * 
-     * @param telEvent TelemetryEvent that stores the relevant telemetry data
+     * @param type Event type is included in session.
+     * @param data Variable used to store any amount of additional information, stored in key value pairs. 
      */
     public void addTelEvent(String type, Map<String, Object> data){
         telEvent = new TelemetryEvent();
@@ -61,6 +62,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Calculates the length of time taken by a single compilation event.
+     * 
      * @return Returns 0 or null if the compilation just started, else it returns the duration of the compilation.  
      */
     public long duration(){
@@ -95,9 +98,10 @@ public class CompileTracker implements CompileListener{
     /**
      * Method provided by bluej API that is invoked when a compilation attempt is initiated. 
      * 
-     * @param lastCompStartMs Stores the time of the most recent compilation attempt.
-     * @param compileIntercalsMs A list of the compilation start times stored in relation to the most recent compilation attempt. Keeps track of the compilation time intervals.
-     * @return Returns the number of failed compilation attempts.  
+     * The timestamp of the event is recorded and the difference between that timestamp and the most recent compilation is stored in an array. This keep tracks of the intervals between compiilation attempts. 
+     * 
+     * @param event This is an event that is triggered when either a user initiates a compilation.
+     * 
      */
     @Override 
     public void compileStarted(CompileEvent event) {
@@ -118,8 +122,10 @@ public class CompileTracker implements CompileListener{
 
     /**
      * Method invoked when a compulation error is detected.
-     * @param compileErrors A list of compilation errors including the line number the error occured on, the error message received, the error's position and the time it was detected 
-     * @param numCompileErrors Counts the number of compilation errors detected
+     * 
+     * This method updates a list of compilation errors including the line number the error occured on, the error message received, the error's position and the time it was detected.
+     * As well as counts the number of compilation errors detected
+     * @param event This is an event that is triggered when either a user initiates a compilation.
      */
     @Override 
     public void compileError(CompileEvent event){
@@ -131,7 +137,9 @@ public class CompileTracker implements CompileListener{
     /**
      * Method invoked when a compile warning is generated.
      * 
-     * @param compileWarnings A list of compilation errors including the line number the error occured on, the error message received, the error's position and the time it was detected 
+     * This method updates list of compilation errors including the line number the error occured on, the error message received, the error's position and the time it was detected.
+     * @param event This is an event that is triggered when either a user initiates a compilation.
+     * 
      */
     @Override 
     public void compileWarning(CompileEvent event){
@@ -142,11 +150,12 @@ public class CompileTracker implements CompileListener{
      /**
      * Method invoked when a compilation attempt was successful.
      * 
-     * @param compileWarnings A list of compile warnings received including the line number the error occured on, the error message received, the error's position and the time it was detected.
-     * @param numCompiles Counts the number of total compilation attemps
-     * @param numSuccessfulFiles Stores a list of the classes that successfully compiled
-     * @param numSuccessfulCompiles Counts the number of successful compilations
-     * @param data Stores additional information in a key value pair
+     * Method updates list of compile warnings received including the line number the error occured on, the error message received, the error's position and the time it was detected.
+     * It counts the number of total and successful compilation attemps as well as stores a list of the classes that successfully compiled. 
+     * 
+     * Telemtry event is added to the session by invoking addTelEvent;
+     * 
+     * @param event This is an event that is triggered when either a user initiates a compilation.
      */
     @Override 
     public void compileSucceeded(CompileEvent event){
@@ -165,11 +174,9 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
-     * Method invoked when a compilation failed. 
-     * @param numCompiles Counts the number of total compilation attemps
-     * @param numFailedCompiles Counts the number of failed compilations
-     * @param compileFailedFiles Maintains a list of classes whose compilations failed
-     * @param data Stores additional information in a key value pair
+     * Method invoked when a compilation failed and increments the number of both total and failed compilation attemps. 
+     * 
+     * List of classes that failed the compilation is maintained and telEvent is invoked to update the session.
      */
     @Override 
     public void compileFailed(CompileEvent event){
@@ -225,6 +232,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns the time at which the compilation started.  
      */
     public Timestamp getCompileStart() {
@@ -232,6 +241,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns the total number of compilation attempts.  
      */
     public int getNumCompiles() {
@@ -239,6 +250,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns the number of compilation errors.  
      */
     public int getNumCompileErrors() {
@@ -246,6 +259,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns the number of compilation warnings.  
      */
     public int getNumCompileWarnings() {
@@ -253,6 +268,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns the number of successful compilation attempts.  
      */
     public int getNumCompileSuccessful() {
@@ -260,6 +277,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns the number of failed compilation attempts.  
      */
     public int getNumCompileFailed() {
@@ -267,6 +286,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns the names of the classes whose compilations succeeded.  
      */
     public List<File[]> getCompileSuccessfulFiles() {
@@ -274,6 +295,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns the names of the classes whose compilations failed.  
      */
     public List<File[]> getCompileFailedFiles() {
@@ -281,6 +304,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns a list of the compilation errors. 
      */
     public List<ErrorRecord> getCompileErrors() {
@@ -288,6 +313,8 @@ public class CompileTracker implements CompileListener{
     }
 
     /**
+     * Used to generate reports. 
+     * 
      * @return Returns a list of the compilation warnings. 
      */
     public List<ErrorRecord> getCompileWarnings() {

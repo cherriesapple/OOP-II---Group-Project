@@ -8,7 +8,9 @@ import bluej.extensions2.event.ClassListener;
 import bluej_extension.SessionModel.ClassLifecycleEvent;
 
 /**
- * This class is used by the extension to listen to all the class level changes made within the bluej environment
+ * This class is used by the extension to listen to all the class level changes made within the bluej environment.
+ * 
+ * Utlises the observer design pattern as it implements the Classlistener interface provided by the bluejAPI.
  * 
  * @author Shurona Jackson
  */
@@ -23,7 +25,7 @@ public class ClassTracker implements ClassListener {
     /**
      * Creates a class tracker.
      * 
-     * @param session is used to store telemetry data.
+     * @param session Session is used to store telemetry data.
      */
     public ClassTracker (SessionModel session){
         this.session = session;
@@ -88,20 +90,20 @@ public class ClassTracker implements ClassListener {
     /**
      * Method provided by bluej API that checks to see whether the class name is changed. 
      * 
-     * @param eventDescription Formats event description to include new name and the name it was changed from then calls method to populate the session model.
+     * @param event This is an event that is triggered when a user interactions with a class in the bluej environment. 
      */
     @Override 
     public void classNameChanged(ClassEvent event){
 
         Timestamp time = new Timestamp(System.currentTimeMillis());
-        String eventDescription = "NAME_CHANGED [New Name: " + event.getBClass().getName() + "]\n[Old Name: " + event.getOldName() + "]";
+        eventDescription = "NAME_CHANGED [New Name: " + event.getBClass().getName() + "]\n[Old Name: " + event.getOldName() + "]";
         storeTelemetryEvents(event.getOldName(), eventDescription, time);
     }
 
     /**
      * Method provided by bluej that checks whether a class is removed. 
      * 
-     * @param eventDescription Formats event description to include [CLASS_REMOVED] status and the name of the removed class.
+     * @param event This is an event that is triggered when a user interactions with a class in the bluej environment. 
      */
     @Override
     public void classRemoved(ClassEvent event){
@@ -115,7 +117,7 @@ public class ClassTracker implements ClassListener {
     /**
      * Method provided by bluej that checks whether a class' state is changed. 
      * 
-     * @param eventDescription Formats event description to include the classes name and invokes the formatStateChangeEvent method that adds further details depending on the type of change.
+     * @param event This is an event that is triggered when a user interactions with a class in the bluej environment. 
      */
 
     @Override
@@ -128,6 +130,7 @@ public class ClassTracker implements ClassListener {
     }
 
     /**
+     * This method can be called by other classes the require the number of classes deleted. 
      * 
      * @return Returns the number of deleted classes
      */

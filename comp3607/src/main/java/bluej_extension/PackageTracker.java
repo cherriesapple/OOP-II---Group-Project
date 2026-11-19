@@ -38,11 +38,12 @@ public class PackageTracker implements PackageListener {
         session.events.add(myEvent);
     }
 
-    /**
-     * Generates the event description of the event that occured and invokes the method that updates the session 
-     * 
-     * @param action If hasOpened is true the action contains Created/Opened or Deleted/Closed if false
-     */
+   /**
+    * Generates the event description of the event that occured and invokes the method that updates the session. 
+    * 
+    * @param packageName This is the name of the package that triggered the event. 
+    * @param hasOpened Checks whether the package was created/opened or deleted/closed. 
+   */
     public void recordPackageEvent(String packageName, boolean hasOpened){
         Timestamp time = new Timestamp(System.currentTimeMillis());
         String action = hasOpened ? "Created/Opened" : "Deleted/Closed";
@@ -51,9 +52,9 @@ public class PackageTracker implements PackageListener {
     }
 
     /**
-     * Generates the event description of the error that occured and invokes the method that updates the session 
+     * Generates the event description of the error that occured and invokes the method that updates the session.
      * 
-     * @param eventDescription Stores the information pertaining to the event that occured. 
+     * @param errorMessage Exception thrown by the package error. 
      */
     public void recordPackageError(String errorMessage) {
         Timestamp time = new Timestamp(System.currentTimeMillis());
@@ -63,6 +64,8 @@ public class PackageTracker implements PackageListener {
 
       /**
      * Method provided by bluej API that records either the package that was deleted/closed or the error generated.
+     * 
+     * @param event The event triggered by the user's interaction with the package. 
      * 
      */
     @Override 
@@ -80,6 +83,7 @@ public class PackageTracker implements PackageListener {
      /**
      * Method provided by bluej API that records either the package that was created/opened or the error generated.
      * 
+     * @param event The event triggered by the user's interaction with the package. 
      */
     @Override 
     public void packageOpened(PackageEvent event){
