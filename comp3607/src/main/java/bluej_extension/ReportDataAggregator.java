@@ -6,45 +6,45 @@ public class ReportDataAggregator {
 
     public static ReportData aggregate(SessionModel session) {
 
-        ReportData d = new ReportData();
-        d.projectName = session.sessionData.projectName;
-        d.userId      = session.userId;
-        d.startTime   = session.sessionData.startTime;
-        d.endTime     = session.sessionData.endTime;
+        ReportData data = new ReportData();
+        data.projectName = session.sessionData.projectName;
+        data.userId      = session.userId;
+        data.startTime   = session.sessionData.startTime;
+        data.endTime     = session.sessionData.endTime;
 
-        d.totalSessionMinutes = Math.round(session.sessionLengthMinutes);
-        d.idleMinutes         = Math.round(session.idleMinutes);
-        d.activeMinutes       = Math.max(0, d.totalSessionMinutes - d.idleMinutes);
+        data.totalSessionMinutes = Math.round(session.sessionLengthMinutes);
+        data.idleMinutes         = Math.round(session.idleMinutes);
+        data.activeMinutes       = Math.max(0, data.totalSessionMinutes - data.idleMinutes);
 
-        d.totalCompilations = session.totalCompilations;
-        d.totalErrors       = session.totalErrors;
-        d.totalRuns         = session.sessionData.totalRuns;
-        d.sucessfulComp    = session.sessionData.successfulCompilations;
-        d.failedComp        = session.sessionData.failedCompilations;
+        data.totalCompilations = session.totalCompilations;
+        data.totalErrors       = session.totalErrors;
+        data.totalRuns         = session.sessionData.totalRuns;
+        data.sucessfulComp    = session.sessionData.successfulCompilations;
+        data.failedComp        = session.sessionData.failedCompilations;
 
-        d.activityMap = new LinkedHashMap<>();
+        data.activityMap = new LinkedHashMap<>();
 
         SessionModel.ActivityTimeline tl = session.derived.activityTimeline;
         if (tl != null && tl.buckets != null) {
             for (SessionModel.Bucket b : tl.buckets)
-                d.activityMap.put(b.bucketStart, b.editSignals);
+                data.activityMap.put(b.bucketStart, b.editSignals);
         }
 
-        d.errorFrequencies = new LinkedHashMap<>();
+        data.errorFrequencies = new LinkedHashMap<>();
         if (session.derived.errorCategoryTotals != null)
-            d.errorFrequencies.putAll(session.derived.errorCategoryTotals);
+            data.errorFrequencies.putAll(session.derived.errorCategoryTotals);
 
-        d.projectTimeline = new ArrayList<>();
+        data.projectTimeline = new ArrayList<>();
         if (session.classLifecycle != null) {
             for (SessionModel.ClassLifecycleEvent e : session.classLifecycle) {
                 ReportData.TimelineEvent te = new ReportData.TimelineEvent();
                 te.className = e.className;
                 te.event     = e.event;
                 te.timeStamp = String.valueOf(e.timestamp);
-                d.projectTimeline.add(te);
+                data.projectTimeline.add(te);
             }
         }
-        return d;
+        return data;
 
     }
     
