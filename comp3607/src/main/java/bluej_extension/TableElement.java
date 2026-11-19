@@ -1,11 +1,18 @@
 package bluej_extension;
-
+/** @author Malik Blackman */
 import java.io.IOException;
 import java.util.List;
 
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
+/**
+ * Simple fixed-width table: one header row, then data rows separated by horizontal rules. 
+ * Column widths are passed in so callers can match the table to the page geometry.
+ *
+ * Deliberately basic with no word wrap, no cell background, no spanning.
+ * Anything fancier would be overkill for the timeline page.
+ */
 public class TableElement implements ReportElement{
 
     private final String[] headers;
@@ -22,6 +29,10 @@ public class TableElement implements ReportElement{
 
     @Override
     public void render(PDPageContentStream stream, float startY) throws IOException {
+
+        /** Total width is needed twice (for the lines under each row),
+        * so cache it once instead of recomputing in the loop.
+        */
         
         float total = 0;
 
@@ -31,9 +42,13 @@ public class TableElement implements ReportElement{
 
         float y = startY;
 
+        /**Header row */
+
         drawRow(stream, y, headers, widths, true);
         drawLine(stream, y-23, total);
         y -= 20;
+
+        /** Data rows */
 
         for(String[] row : rows){
             
@@ -45,6 +60,10 @@ public class TableElement implements ReportElement{
         
     }
 
+    /**
+     * Draws a single row of cells. Text is nudged down slightly (y - 15)
+     * so it sits visually centred inside the 20pt row.
+     */
     private void drawRow(PDPageContentStream stream,float y, String [] cells, float[] widths, boolean header) throws IOException {
         
         float cx= 50;
@@ -68,6 +87,11 @@ public class TableElement implements ReportElement{
     }
 
 
+    /**
+     * Rough character-count truncation. 5.5 is an empirical average character width for 12pt Helvetica; 
+     * good enough to stop columns spilling into each other without needing proper text metrics.
+     */
+
     private String truncateText(String s, float width) {
         if (s == null) return "";
         int max = (int)(width / 5.5f);
@@ -76,7 +100,10 @@ public class TableElement implements ReportElement{
 
     @Override
     public float getHeight() {
-        return 20 + (rows.size() + 1) * 20; // 20 for header, 20 for each row
+
+        /** Header row plus every data row, plus a little extra space */
+        return 20 + (rows.size() + 1) * 20; 
+
     }
 
 

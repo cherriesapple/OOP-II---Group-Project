@@ -70,8 +70,8 @@ public class ClassTracker implements ClassListener {
         
         if (classes.isEmpty()){
             try{
-            for (BClass b : event.getPackage().getClasses()){
-                classes.add(b);
+                for (BClass b : event.getPackage().getClasses()){
+                    classes.add(b);
                 }
             }catch(Exception e){e.getMessage();}
         }
