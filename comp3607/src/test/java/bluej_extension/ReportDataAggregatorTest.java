@@ -29,7 +29,7 @@ class ReportDataAggregatorTest {
         ReportData data = ReportDataAggregator.aggregate(session);
 
         assertEquals("MyProject", data.projectName);
-        assertEquals("student123", data.userId);
+        assertEquals("816012345", data.userId);
         assertEquals("2026-10-01T10:00:00Z", data.startTime);
         assertEquals("2026-10-01T11:00:00Z", data.endTime);
     }
