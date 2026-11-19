@@ -76,7 +76,7 @@ class ReportDataAggregatorTest {
         assertEquals(3, data.totalErrors);
         assertEquals(8, data.totalRuns);
         assertEquals(12, data.successfulComp);
-        assertEquals(3, data.failedComp);
+        assertEquals(3, data.failedCompilations);
     }
 
 
