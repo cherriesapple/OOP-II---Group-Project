@@ -45,8 +45,8 @@ public class ClassTracker implements ClassListener {
         
         if (classes.isEmpty()){
             try{
-            for (BClass b : event.getPackage().getClasses()){
-                classes.add(b);
+                for (BClass b : event.getPackage().getClasses()){
+                    classes.add(b);
                 }
             }catch(Exception e){e.getMessage();}
         }
@@ -86,11 +86,7 @@ public class ClassTracker implements ClassListener {
 
     }
 
-<<<<<<< HEAD
-    public int getNumDeletedClasses(){return this.numDeletedClasses;}
-=======
     public int getNumDeletedClasses() {
         return numDeletedClasses;
     }
->>>>>>> 3e26be7cf419b5197ceebc76b9fc44b36f142577
 }

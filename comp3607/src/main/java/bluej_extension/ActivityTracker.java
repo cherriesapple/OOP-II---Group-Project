@@ -48,7 +48,7 @@ public class ActivityTracker {
         return x.getLine() == y.getLine() && x.getColumn() == y.getColumn();
     }
 
-    private void buildBucket(int x){
+    public void buildBucket(int x){
         while(buckets.size() <= x){
             SessionModel.Bucket b = new SessionModel.Bucket();
             b.bucketIndex = buckets.size();
@@ -59,7 +59,7 @@ public class ActivityTracker {
         }
     }
 
-    private void editLog(long now){
+    public void editLog(long now){
         long gapStart = (lastActivityNs < 0) ? startTimeNs : lastActivityNs;
         long gap = now - gapStart;
 
@@ -90,7 +90,7 @@ public class ActivityTracker {
     }
 
 
-    private void checkActivty(){
+    public void checkActivty(){
         if (editor == null){
             return;
         }

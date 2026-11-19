@@ -35,7 +35,7 @@ public class CompileTracker implements CompileListener{
         this.session = session;
     }
 
-     private void addTelEvent(String type, Map<String, Object> data){
+    public void addTelEvent(String type, Map<String, Object> data){
         telEvent = new TelemetryEvent();
 
         telEvent.timestamp = new Timestamp(System.currentTimeMillis());
@@ -45,11 +45,11 @@ public class CompileTracker implements CompileListener{
         
     }
 
-    private long duration(){
+    public long duration(){
         return compileStart == null ? 0 : System.currentTimeMillis() - compileStart.getTime();
     }
  
-    private String categorize(String message){
+    public String categorize(String message){
         if(message == null){
             return "other";
         }
