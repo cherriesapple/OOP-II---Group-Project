@@ -1,6 +1,7 @@
 package bluej_extension;
 
-import java.time.Instant;
+import java.io.File;
+import java.io.IOException;
 
 import bluej.extensions2.BlueJ;
 import bluej.extensions2.Extension;
@@ -58,15 +59,27 @@ summary.captureMessages();
         return ("Telemetry Extension"); 
     }
 
-    @Override 
-    public void terminate()
-    {
-        System.out.println("Console Count = " + summary.getMessageCount());
-        activityListener.getActivityTracker().stopTracker();
-        compileTracker.populateSession();
-        session.status = "COMPLETE";
-        session.sessionData.endTime = Instant.now().toString();
-        System.out.println ("End of Telemetry Extension");
+
+    @Override
+    public void terminate() {
+
+         try {
+             // JSON export
+            new JsonExporter().export(session);
+
+            // PDF export (timestamped, session-named file in src/files/)
+            File folder = new File("src/files");
+            folder.mkdirs();
+            String name = PDFReport.suggestedFileName(session.sessionData.projectName);
+            new PDFReport().generateReport(session, new File(folder, name).getPath());
+
+    } catch (IOException e) {
+
+            System.err.println("Telemetry export failed: " + e.getMessage());
+
+    }
+            System.out.println("End of Telemetry Extension");
+
     }
         
     @Override 
