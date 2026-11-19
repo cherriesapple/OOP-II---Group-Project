@@ -19,7 +19,16 @@ public class PageElement implements ReportElement {
         
         for (ReportElement element : elements) {
             element.render(stream, currentY);
-            currentY -= 100; 
+            currentY -= element.getHeight() + 10; 
         }
+    }
+
+    @Override
+    public float getHeight() {
+        float height = 0;
+        for (ReportElement element : elements) {
+            height += element.getHeight() + 10;
+        }
+        return height;
     }
 }

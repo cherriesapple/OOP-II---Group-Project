@@ -10,8 +10,13 @@ public class MyExtension extends Extension
     private final PackageTracker packageTracker = new PackageTracker(session);
     private final ClassTracker classTracker = new ClassTracker(session);
     private final InvocationTracker invocationTracker = new InvocationTracker(session);
+<<<<<<< HEAD
     private final CompileTracker compileTracker = new CompileTracker();
     private ConsoleSummary summary = new ConsoleSummary();
+=======
+    private final CompileTracker compileTracker = new CompileTracker(session);
+    private final ActivityListener activityListener = new ActivityListener(session);
+>>>>>>> 3e26be7cf419b5197ceebc76b9fc44b36f142577
     
 
     @Override 
@@ -21,6 +26,7 @@ public class MyExtension extends Extension
         bluej.addClassListener(classTracker);
         bluej.addPackageListener(packageTracker);
         bluej.addInvocationFinishedListener(invocationTracker);    
+<<<<<<< HEAD
         //bluej.addExtensionEventListener(ExtensionEvent event);
         
     
@@ -31,6 +37,9 @@ summary.captureMessages();
 
 
 
+=======
+        bluej.addExtensionEventListener(activityListener);
+>>>>>>> 3e26be7cf419b5197ceebc76b9fc44b36f142577
     }
 
     @Override 
@@ -54,7 +63,14 @@ summary.captureMessages();
     @Override 
     public void terminate()
     {
+<<<<<<< HEAD
         System.out.println("Console Count = " + summary.getMessageCount());
+=======
+        activityListener.getActivityTracker().stopTracker();
+        compileTracker.populateSession();
+        session.status = "COMPLETE";
+        session.sessionData.endTime = Instant.now().toString();
+>>>>>>> 3e26be7cf419b5197ceebc76b9fc44b36f142577
         System.out.println ("End of Telemetry Extension");
     }
         
