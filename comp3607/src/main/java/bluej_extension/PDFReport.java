@@ -1,4 +1,4 @@
-/**package bluej_extension;
+package bluej_extension;
 
 import java.io.File;
 import java.io.IOException;
@@ -177,4 +177,3 @@ public class PDFReport {
 
     }
 }
-**/
