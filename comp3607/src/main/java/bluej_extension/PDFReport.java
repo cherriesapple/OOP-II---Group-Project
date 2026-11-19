@@ -1,4 +1,5 @@
 package bluej_extension;
+/** @author Malik Blackman */
 
 import java.io.File;
 import java.io.IOException;
@@ -12,14 +13,35 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
+/**
+ * Builds a four-page PDF telemetry report from a finished SessionModel.
+ *
+ * Page layout:
+ *   1. Title, table of contents, session overview numbers
+ *   2. User activity area chart with a short summary
+ *   3. Compilation outcome + error frequency bar charts with a summary
+ *   4. Project timeline table with a summary
+ *
+ * Each page is assembled as a PageElement (composite) tree of text, image, and table leaves. 
+ * Rendering a page is then a single recursive call,
+ * the page doesn't care what its children are, only that they implement ReportElement.
+ */
+
 public class PDFReport {
+
+    /** A4/Letter page height is 792pt; starting just below the top margin leaves room for a header if one is added later. */
 
     private final float pageTopY = 750;
     private final float chartW = 500;
 
+    /**
+     * Writes the PDF to {@code filePath}. Any missing parent directories are
+     * created automatically so the caller can just pass "src/files/x.pdf".
+     */
+
     public void generateReport(SessionModel session, String filePath) throws IOException {
         
-        // 1. Aggregate the data from the session
+        /**Flatten the session into a simple data holder first, so the page builders below only ever look at ReportData, never the raw model. */
        ReportData data = ReportDataAggregator.aggregate(session);
 
         File out = new File(filePath);
@@ -39,6 +61,12 @@ public class PDFReport {
 
     }
 
+    /**
+     * Builds a filename of the form {@code ProjectName_YYYYMMDD_HHMMSS.pdf}.
+     * Illegal filename characters are replaced with underscores so the
+     * caller doesn't have to pre-sanitise the project name.
+     */
+
     public static String suggestedFileName(String projectName) {
 
         String base = (projectName == null || projectName.isBlank())
@@ -48,7 +76,7 @@ public class PDFReport {
 
     }
 
-    // Page 1 - Title and Overview
+    /** Page 1 - Title and Overview */
     private PageElement buildOverviewPage(ReportData d) {
 
         PageElement page = new PageElement();
@@ -71,7 +99,7 @@ public class PDFReport {
         page.addElement(new TextElement("Active coding time:        " + d.activeMinutes + " min", 11, false));
         page.addElement(new TextElement("Idle time (>=180s gaps):   " + d.idleMinutes + " min", 11, false));
         page.addElement(new TextElement("Total compilations:        " + d.totalCompilations, 11, false));
-        page.addElement(new TextElement("Successful / Failed:       " + d.sucessfulComp + " / " + d.failedComp, 11, false));
+        page.addElement(new TextElement("Successful / Failed:       " + d.successfulComp + " / " + d.failedComp, 11, false));
         page.addElement(new TextElement("Total compilation errors:  " + d.totalErrors, 11, false));
         page.addElement(new TextElement("Program runs:              " + d.totalRuns, 11, false));
 
@@ -80,7 +108,7 @@ public class PDFReport {
     }
 
 
-    // Page 2 - Activity area chart + summary
+    /**  Page 2 - Activity area chart + summary */
 
      private PageElement buildActivityPage(PDDocument doc, SessionModel s, ReportData d) throws IOException {
 
@@ -101,7 +129,7 @@ public class PDFReport {
     }      
 
 
-    // Page 3 - Compilation outcomes and error frequency
+    /** Page 3 - Compilation outcomes and error frequency */
 
     private PageElement buildCompilationPage(PDDocument doc, SessionModel s, ReportData d) throws IOException {
 
@@ -112,8 +140,8 @@ public class PDFReport {
         page.addElement(new ImageElement(outcomeImg, chartW, 190));
 
         int total = Math.max(1, d.totalCompilations);
-        double rate = 100.0 * d.sucessfulComp / total;
-        page.addElement(new TextElement(String.format("Success rate: %.1f%% (%d of %d attempts).",rate, d.sucessfulComp, d.totalCompilations), 11, false));
+        double rate = 100.0 * d.successfulComp / total;
+        page.addElement(new TextElement(String.format("Success rate: %.1f%% (%d of %d attempts).",rate, d.successfulComp, d.totalCompilations), 11, false));
 
         PDImageXObject errImg = PDImageXObject.createFromByteArray(doc, ChartElement.generateErrorFrequencyChart(s), "errorFrequencyChart");
 
@@ -127,7 +155,7 @@ public class PDFReport {
 
     }
 
-    //Page 4 - Project Timeline + summary
+    /** Page 4 - Project Timeline + summary */
 
     private PageElement buildTimelinePage(ReportData d) {
 
@@ -142,6 +170,11 @@ public class PDFReport {
         int i = 1;
         for (ReportData.TimelineEvent e : d.projectTimeline) {
             rows.add(new String[] {String.valueOf(i++),safe(e.className),safe(e.event), safe(e.timeStamp)});
+
+            /**Cap at 15 rows so the table always fits on one page. 
+             * If a session produces more events than this we'd need a paged table, 
+             * leaving that as a future extension.
+             */
 
             if (rows.size() >= 15) break;  
         }
@@ -162,12 +195,16 @@ public class PDFReport {
 
     }
 
-    // Utility methods
+    /** Utility methods */
+
+    /** Replaces null strings with an empty string so they render cleanly. */
     private static String safe(String s) {
 
         return (s == null) ? "" : s;
 
     }
+
+    /** Creates a fresh PDF page and renders the composite tree onto it. */
 
     private void renderPage(PDDocument doc, PageElement page) throws IOException {
 
