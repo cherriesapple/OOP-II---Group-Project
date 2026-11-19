@@ -7,19 +7,36 @@ import bluej.extensions2.event.ClassEvent;
 import bluej.extensions2.event.ClassListener;
 import bluej_extension.SessionModel.ClassLifecycleEvent;
 
+/**
+ * This class is used by the extension to listen to all the class level changes made within the bluej environment
+ * 
+ * @author Shurona Jackson
+ */
 public class ClassTracker implements ClassListener {
 
     private int numDeletedClasses = 0;   
+    private String eventDescription; 
     private ClassLifecycleEvent myEvent;
     private final SessionModel session;
     private final ArrayList<BClass> classes = new ArrayList<>();
     
+    /**
+     * Creates a class tracker.
+     * 
+     * @param session is used to store telemetry data.
+     */
     public ClassTracker (SessionModel session){
         this.session = session;
     }
 
+    /**
+     * Formats the state change event description based on what change within the class. 
+     * 
+     * Whether it was compiled, had a name change or was newly created.
+     * @return An event description string that will be stored in the session class. 
+     */
     public String formatStateChangeEvent(boolean isCompiled, boolean isNewClass, String className) {
-        String eventDescription = "MODIFIED";
+        eventDescription = "MODIFIED";
 
         if (isCompiled)
             eventDescription += "[Compilation Attempt] " + "ClassName: " + className;
@@ -32,6 +49,9 @@ public class ClassTracker implements ClassListener {
         return eventDescription;
     }
 
+    /**
+     * Populates the telemetry event (class lifecycle event) data then adds it to the session model. 
+     */
     public void storeTelemetryEvents(String name, String event, Timestamp time){
         
         myEvent = new ClassLifecycleEvent();
@@ -41,6 +61,11 @@ public class ClassTracker implements ClassListener {
         session.classLifecycle.add(myEvent);  
     }
 
+    /**
+     * Checks to see if a new class was created
+     * 
+     * @return true if class name does not exist in the array list of package classes. Class is newly created
+     */
     public boolean isNewClass(ClassEvent event){
         
         if (classes.isEmpty()){
@@ -60,6 +85,11 @@ public class ClassTracker implements ClassListener {
        
     }
     
+    /**
+     * Method provided by bluej API that checks to see whether the class name is changed. 
+     * 
+     * @param eventDescription Formats event description to include new name and the name it was changed from then calls method to populate the session model.
+     */
     @Override 
     public void classNameChanged(ClassEvent event){
 
@@ -68,29 +98,38 @@ public class ClassTracker implements ClassListener {
         storeTelemetryEvents(event.getOldName(), eventDescription, time);
     }
 
+    /**
+     * Method provided by bluej that checks whether a class is removed. 
+     * 
+     * @param eventDescription Formats event description to include [CLASS_REMOVED] status and the name of the removed class.
+     */
     @Override
     public void classRemoved(ClassEvent event){
         Timestamp time = new Timestamp(System.currentTimeMillis());
-        String eventDescription = "[CLASS_REMOVED]" + event.getBClass().getName(); 
+        eventDescription = "[CLASS_REMOVED]" + event.getBClass().getName(); 
 
         this.numDeletedClasses++;
         storeTelemetryEvents(event.getBClass().getName(), eventDescription, time);
     }
 
+    /**
+     * Method provided by bluej that checks whether a class' state is changed. 
+     * 
+     * @param eventDescription Formats event description to include the classes name and invokes the formatStateChangeEvent method that adds further details depending on the type of change.
+     */
+
     @Override
     public void classStateChanged(ClassEvent event){
         Timestamp time = new Timestamp(System.currentTimeMillis());
         String className = event.getBClass().getName();
-        String eventDescription = formatStateChangeEvent(event.isClassCompiled(), isNewClass(event), className);
+        eventDescription = formatStateChangeEvent(event.isClassCompiled(), isNewClass(event), className);
         storeTelemetryEvents(className, eventDescription, time);
 
     }
 
-<<<<<<< HEAD
+    /**
+     * 
+     * @return Returns the number of deleted classes
+     */
     public int getNumDeletedClasses(){return this.numDeletedClasses;}
-=======
-    public int getNumDeletedClasses() {
-        return numDeletedClasses;
-    }
->>>>>>> 3e26be7cf419b5197ceebc76b9fc44b36f142577
 }
