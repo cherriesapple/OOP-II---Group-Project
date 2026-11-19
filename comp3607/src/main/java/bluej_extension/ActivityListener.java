@@ -8,6 +8,11 @@ import bluej.extensions2.event.ClassEvent;
 import bluej.extensions2.event.ExtensionEvent;
 import bluej.extensions2.event.ExtensionEventListener;
 
+/**
+ * ActivityListener is used by the extension through the ExtensionEventListener to capture the editor used within 
+ * a class event to track user activity.
+ * @author Zuri Boucaud
+ */
 public class ActivityListener implements ExtensionEventListener{
 
     private final ActivityTracker activityTracker;
@@ -16,6 +21,12 @@ public class ActivityListener implements ExtensionEventListener{
         this.activityTracker = new ActivityTracker(session);
     }
 
+    /** (BlueJ Extension)
+     * @see bluej.extensions2.event.ExtensionEventListener#eventOccurred(bluej.extensions2.event.ExtensionEvent)
+     * 
+     * modifyied to get active editor and starts activity tracker. if the editor is null,
+     * exception is thrown
+     */
     @Override
     public void eventOccurred(ExtensionEvent event){
 
