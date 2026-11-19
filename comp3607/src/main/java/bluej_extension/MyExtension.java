@@ -96,21 +96,7 @@ public class MyExtension extends Extension
             System.out.println("End of Telemetry Extension");
 
     }
-        
-        activityListener.getActivityTracker().stopTracker();
-        compileTracker.populateSession();
 
-        if (bluejProxy != null) {
-            bluejProxy.removeCompileListener(compileTracker);
-            bluejProxy.removeClassListener(classTracker);
-            bluejProxy.removePackageListener(packageTracker);
-            bluejProxy.removeInvocationFinishedListener(invocationTracker);
-            bluejProxy.removeExtensionEventListener(activityListener);
-        }
-
-        jsonExporter.export(session);
-
-    }
        
     /**
      * Retrieves the description of what this extension does.
