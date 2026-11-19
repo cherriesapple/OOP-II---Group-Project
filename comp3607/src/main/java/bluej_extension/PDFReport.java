@@ -204,7 +204,7 @@ public class PDFReport {
 
     }
 
-    /** Creates a fresh PDF page and renders the composite tree onto it. */
+    /** Creates a fresh PDF page and renders the composite . */
 
     private void renderPage(PDDocument doc, PageElement page) throws IOException {
 
